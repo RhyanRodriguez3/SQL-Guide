@@ -30,7 +30,7 @@ Contains SQL code for reuse and projects
 - ALTER SCHEMA: Modify an existing schema.
 - DROP SCHEMA: Delete a schema from the database.
 
-## Other SQL Commands:
+## Other Commands:
 - USE: Select a particular database.
 - SHOW: Display information about the database.
 - DESCRIBE: Show the structure of a table.
