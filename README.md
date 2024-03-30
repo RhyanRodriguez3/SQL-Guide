@@ -1,4 +1,4 @@
-# SQL Guide
+## SQL Guide
 Contains SQL code for reuse and projects
 
 # Data Query Language (DQL)
