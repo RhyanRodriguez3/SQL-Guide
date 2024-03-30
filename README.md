@@ -1,7 +1,7 @@
 # SQL Guide
 Contains SQL code for reuse and projects
 
-# SQL Data Query Language
+# Data Query Language (DQL)
 - SELECT: Retrieve data from a database.
 
 # SQL Data Definition Language (DDL)
