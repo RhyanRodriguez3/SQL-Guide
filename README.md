@@ -19,7 +19,8 @@ Contains SQL code for reuse and projects
 ## SQL Data Control Language (DCL):
 - GRANT: Give privileges to database users.
 - REVOKE: Take back privileges from database users.
-- Transaction Control Language (TCL):
+
+## SQL Transaction Control Language (TCL):
 - COMMIT: Save changes made during the current transaction.
 - ROLLBACK: Undo changes made during the current transaction.
 - SAVEPOINT: Set a point within a transaction to which you can later roll back.
