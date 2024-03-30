@@ -4,17 +4,15 @@
 DROP TABLE IF EXISTS OlympicHistory;
 CREATE TABLE IF NOT EXISTS OlympicHistory 
 (
-  ID        INT,
-  Name      VARCHAR,
-  Sex       VARCHAR,
-  Age       VARCHAR,
-  Height    VARCHAR,
-  Weight    VARCHAR,
-  Team      VARCHAR,
-  NOC       VARCHAR,
-  GAMES     VARCHAR,
-  Year      INT,
-  Season    VARCHAR,
+  ColumnName1  INT,
+  ColumnName2  VARCHAR,
+  ColumnName3  VARCHAR,
+  ColumnName4  VARCHAR,
+  ColumnName5  VARCHAR,
+  ColumnName6  VARCHAR,
+  ColumnName7  VARCHAR,
+  ColumnName8  VARCHAR,
+  ColumnName9  VARCHAR,
 );
 
 SELECT * FROM tablenames; -- Test if the table was created with a SELECT * FROM tablenames;
