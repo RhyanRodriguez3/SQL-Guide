@@ -39,6 +39,12 @@ JOIN t1 on t1.NewColumnName1 = t3.NewColumnName2;
 
 
 /* How can I manipulate the dataset to create measures and provide answers?" */
-SELECT ColumnName4, COUNT(ColumnName7) AS NewColumnName7 -- Create a new column and declare what is contained in that calculated column
-FROM TableName;
-WHERE YourCondition operator YourCondition
+WITH T1 AS
+  (SELECT ColumnName4, COUNT(ColumnName7) AS NewColumnName7 -- Create a new column and declare what is contained in that calculated column
+  FROM TableName;
+  WHERE YourCondition operator YourCondition
+  GROUP BY ColumnName4
+  ORDER BY COUNT(ColumnName7) DESC),
+T2 AS
+  (SELECT *, RANK() OVER(ORDER BY NewColumnName7 DESC) AS RNK
+  FROM TableName;)
