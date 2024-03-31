@@ -5,11 +5,13 @@ Contains SQL code for reuse and projects
 Clauses/commands to retrieve data from db. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
 
 - `SELECT` *ColumnName1* Retrieves all data or specific columns from a db.
-- `DISTINCT` Removes duplicate records from a column.
+- FUNCTIONS (AGGREGATE) Perform a calculation on sets of values and returns a single result. Every RDBMS uses different versions, simply search their aggregate function documentation.
+> Examples include `SUM()` `AVG()` `MIN()` `MAX()` `COUNT()` `GROUP_CONCAT()()` `STDEV() / STDEV_SAMP() / STDEV_POP()` `VAR()` `COUNT()` `COUNT()`
+>
+> `GETDATE()` Autofill rows for a Date Column.
+> 
+> `DISTINCT` Removes duplicate records from a column.
 - `FROM` *TableName* Specify the source table.
-- `WHERE` Filters rows based on specified conditions. Often uses operators 
-> (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `AND` multiple conditions `BETWEEN` a range, `LIKE` Search for Patterns, `IN` Specify desired values*)
-> (*Conditions for strings/text use wildcards `%` represents zero or multiple characters `_` represents a single character*)
 > `GROUP BY` *Groups* rows with the same values into summary rows. Often used with aggregate functions.
 - JOINS Combines data from multiple tables
 > `SELECT` * `FROM` *TableName1* `AS` *TableNameAbbr1* `INNER JOIN` *TableName2* `AS` *TableNameAbbr2* `ON` *TableNameAbbr1.IDColumnName* `=` *TableNameAbbr2.IDColumnName*
@@ -18,10 +20,9 @@ Clauses/commands to retrieve data from db. https://learnsql.com/blog/standard-sq
 > 
 > `RIGHT JOIN` 
 - `ORDER BY` Sorts the results based on specified criteria
-- FUNCTIONS (AGGREGATE) Perform a calculation on sets of values and returns a single result. Every RDBMS uses different versions, simply search their aggregate function documentation.
-> Examples include `SUM()` `AVG()` `MIN()` `MAX()` `COUNT()` `GROUP_CONCAT()()` `STDEV() / STDEV_SAMP() / STDEV_POP()` `VAR()` `COUNT()` `COUNT()`
->
-> `GETDATE()` Autofill rows for a Date Column.
+- `WHERE` Filters rows based on specified conditions. Often uses operators 
+> (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `AND` multiple conditions `BETWEEN` a range, `LIKE` Search for Patterns, `IN` Specify desired values*)
+> (*Conditions for strings/text use wildcards `%` represents zero or multiple characters `_` represents a single character*)
 - Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
 
 
