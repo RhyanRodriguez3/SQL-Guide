@@ -23,26 +23,22 @@ Clauses/commands to retrieve data from db. https://learnsql.com/blog/standard-sq
 - Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
 
 
-## 2. Database Definition & Manipulation Language (DDL) & (DML)
-Manipulate the database tables.
+## 2. Database Definition & Manipulation Language (DDL) & Database Manipulation Language (DML)
+Manipulate the database tables. Commands used to add, modify, or delete data in tables.
 
 - Create a new table: `CREATE TABLE();` *ColumnName1 DataType(CharAmnt)*
 > *It is good practice to have the first column be the ID*: `PRIMARY KEY` `IDENTITY(1,1)` 
-- Change row values in a column: `UPDATE` *TableName* `SET` *ColumnName1 = Condition*; 
-- Add columns to a table: `ALTER TABLE` *TableName* `ADD` *NewColumnName DataType(CharAmnt)* 
+- Change row values in a column: `UPDATE` *TableName* `SET` *ColumnName1 = Condition*; ```Rows
+- Add columns to a table: `ALTER TABLE` *TableName* `ADD` *NewColumnName DataType(CharAmnt)*
+- Add rows to a table `INSERT INTO` *TableName (ColumnName1,ColumnName1, etc)* `VALUES();`
 - Delete row values from a table, but doesn't delete the table structure: `DELETE` *TableName*; 
 - Deletes a table from the db: `DROP TABLE` *TableName*; 
 - CREATE INDEX: Create an index on a table.
-- DROP INDEX: Delete an index from the database.
-
-
-## 3. Database Manipulation Language (DML): Commands used to add, modify, or delete data in tables.
-
-- INSERT INTO: Insert new records into a table.
+- DROP INDEX: Delete an index from the database. 
 - TRUNCATE TABLE: Removes all records from a table in a database, but keeps the table and structure in place.
 
 
-## 4. Database Control Language (DCL):
+## 3. Database Control Language (DCL)
 
 - GRANT: Give privileges to database users.
 - REVOKE: Take back privileges from database users.
