@@ -7,7 +7,7 @@ Clauses/commands used for retrieving data from dbs.
 - `SELECT` *Column1* Retrieves all data or specific columns from a db.
 - `DISTINCT` Removes duplicate records from a column.
 - `FROM` *TableName* Specify the source table.
-- `WHERE` *InputCondition InputOperator InputCondition*
+- `WHERE` *InputCondition InputOperator InputCondition* Filters rows based on specific conditions
 > (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `BETWEEN` range, `LIKE` InputPattern, `IN` SpecifiedValues*)
 - JOINS Combines data from multiple tables
 > `INNER JOIN`
