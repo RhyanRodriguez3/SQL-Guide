@@ -51,11 +51,11 @@ Manipulate the database tables. Commands to add, modify, and delete data in tabl
 
 <details>
   <summary>Other</summary>
-      ## 3. Database Control Language (DCL)
+## 3. Database Control Language (DCL)
 - GRANT: Give privileges to database users.
 - REVOKE: Take back privileges from database users.
 
-      ## 4. Transaction Control Language (TCL):
+## 4. Transaction Control Language (TCL):
 - COMMIT: Save changes made during the current transaction.
 - ROLLBACK: Undo changes made during the current transaction.
 - SAVEPOINT: Set a point within a transaction to which you can later roll back.
