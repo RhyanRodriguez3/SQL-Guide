@@ -2,7 +2,7 @@
 Structured Query Language (SQL), is a programming language designed to manipulate data (DQL) and databases (DDL, DML, and DCL). There are many RDBMSs such as Oracle and MS SQL Server which have different versions of SQL but the language is standardized by ANSI. This is a fundemantals guide to get you on your way. Each file in this repo contains SQL projects and codes for reuse.
 
 <details>
-<summary>1. Data Query Language (DQL) are commands to retrieve and manipulate data.</summary>
+  <summary>1. Data Query Language (DQL) are commands to retrieve and manipulate data.</summary>
 
 Commands to retrieve and manipulate data from db. Shows functions and create custom measures and Calc Columns. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
 https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
@@ -32,7 +32,7 @@ https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
 </details>
 
 <details>
-<summary>2. Data Definition/Manipulation Language (DDL)/(DML)</summary>
+  <summary>2. Data Definition/Manipulation Language (DDL)/(DML)</summary>
 Manipulate the database tables. Commands to add, modify, and delete data in tables. Create a data table from scratch and manage the engine
 
 - Create a new table: `CREATE TABLE();` *ColumnName1 DataType(CharAmnt)*
@@ -49,6 +49,8 @@ Manipulate the database tables. Commands to add, modify, and delete data in tabl
 - TRUNCATE TABLE: Removes all records from a table in a database, but keeps the table and structure in place.
 </details>
 
+<details>
+  <summary>1. Data Query Language (DQL) are commands to retrieve and manipulate data.</summary>
 ## 3. Database Control Language (DCL)
 
 - GRANT: Give privileges to database users.
@@ -75,4 +77,6 @@ Manipulate the database tables. Commands to add, modify, and delete data in tabl
 - SHOW: Display information about the database.
 - DESCRIBE: Show the structure of a table.
 - SET: Set or change settings of the SQL environment.
+
+</details>
 
