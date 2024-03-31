@@ -5,7 +5,7 @@ Contains SQL code for reuse and projects
 - SELECT Column1: Retrieves all data or specific columns from a db.
 - DISTINCT: Removes duplicate records from a column.
 - FROM TableName: The specified source table.
-- WHERE InputCondition InputOperator InputCondition
+- WHERE *InputCondition InputOperator InputCondition*
 >(*Operators are =, >= Greater than or equal to, < less than, <> Not Equal, **BETWEEN** range, LIKE InputPattern, IN SpecifiedValues*)
 
 ## 2. Data Definition Language (DDL)
