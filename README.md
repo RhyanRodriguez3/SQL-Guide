@@ -1,8 +1,8 @@
 # **SQL Guide**
-Contains SQL code for reuse and projects
+Contains SQL code for reuse and projects. Data manipulation - Show functions and create custom measures and calculated columns and Db manipulation - Create a data table from scratch and manage the engine
 
 ## 1. Data Query Language (DQL)
-Clauses/commands to retrieve data from db. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
+Commands to retrieve and manipulate data from db. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
 https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
 
 - `SELECT` *ColumnName1* Retrieves all data or specific columns from a db.
