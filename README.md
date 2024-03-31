@@ -2,7 +2,7 @@
 Structured Query Language (SQL), is a programming language designed to manipulate data (DQL) and databases (DDL, DML, and DCL). There are many RDBMSs such as Oracle and MS SQL Server which have different versions of SQL but the language is standardized by ANSI. This is a fundemantals guide to get you on your way. Each file in this repo contains SQL projects and codes for reuse.
 
 <details>
-  <summary>1. Data Query Language (DQL) are commands to retrieve and manipulate data.</summary>
+  <summary>Other</summary>
 
 Commands to retrieve and manipulate data from db. Shows functions and create custom measures and Calc Columns. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
 https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
@@ -80,3 +80,6 @@ Manipulate the database tables. Commands to add, modify, and delete data in tabl
 
 </details>
 
+<details>
+  <summary>Sources</summary>
+</details>
