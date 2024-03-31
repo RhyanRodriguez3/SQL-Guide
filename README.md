@@ -26,11 +26,12 @@ Clauses/commands to retrieve data from db. https://learnsql.com/blog/standard-sq
 ## 2. Database Definition & Manipulation Language (DDL) & (DML)
 Manipulate the database tables.
 
-- Create a new table: `CREATE TABLE();` *ColumnName1 DataType(CharAmnt)* 
-- `UPDATE` *TableName* `SET` *ColumnName1 = Condition*; Modify row values in a column.
-- `ALTER TABLE` *TableName* `ADD` *NewColumnName DataType(CharAmnt)* Add columns to a table.
-- `DELETE` *TableName* Delete row values from a table, but doesn't delete the table structure.
-- `DROP TABLE` *TableName*; Deletes a table from the db.
+- Create a new table: `CREATE TABLE();` *ColumnName1 DataType(CharAmnt)*
+> *It is good practice to have the first column be the ID*: `PRIMARY KEY` `IDENTITY(1,1)` 
+- Change row values in a column: `UPDATE` *TableName* `SET` *ColumnName1 = Condition*; 
+- Add columns to a table: `ALTER TABLE` *TableName* `ADD` *NewColumnName DataType(CharAmnt)* 
+- Delete row values from a table, but doesn't delete the table structure: `DELETE` *TableName*; 
+- Deletes a table from the db: `DROP TABLE` *TableName*; 
 - CREATE INDEX: Create an index on a table.
 - DROP INDEX: Delete an index from the database.
 
