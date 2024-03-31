@@ -2,7 +2,7 @@
 Contains SQL code for reuse and projects
 
 ## 1. Data Query Language (DQL)
-Clauses/commands used for retrieving data from dbs. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
+Clauses/commands to retrieve data from db. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
 
 - `SELECT` *Column1* Retrieves all data or specific columns from a db.
 - `DISTINCT` Removes duplicate records from a column.
@@ -24,8 +24,9 @@ Clauses/commands used for retrieving data from dbs. https://learnsql.com/blog/st
 
 
 ## 2. Database Definition Language (DDL)
+Manipulate the database tables.
 
-- CREATE TABLE: Create a new table.
+- `CREATE TABLE( *ColumnName1 DataType(Value),*);` Create a new table.
 - ALTER TABLE: Modify an existing table's structure.
 - DROP TABLE: Delete a table from the database.
 - CREATE INDEX: Create an index on a table.
