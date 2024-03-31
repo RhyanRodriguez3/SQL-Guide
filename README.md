@@ -17,7 +17,11 @@ Clauses/commands used for retrieving data from dbs.
 > `RIGHT JOIN` 
 - ORDER BY Sorts the results based on specified criteria
 - Aggregate Functions 
-
+> `SUM`
+> `AVG`
+> `MIN`
+> `MAX`
+> `COUNT`
 
 ## 2. Data Definition Language (DDL)
 - CREATE TABLE: Create a new table.
