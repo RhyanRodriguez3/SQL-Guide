@@ -1,8 +1,7 @@
 # **SQL Guide**
 Contains SQL code for reuse and projects
 
-<details>
- <summary><h3>1. Data Query Language (DQL) </h3></summary>
+1. Data Query Language (DQL)
 Clauses/commands used for retrieving data from dbs.
 - `SELECT` *Column1* Retrieves all data or specific columns from a db.
 - `DISTINCT` Removes duplicate records from a column.
@@ -18,7 +17,7 @@ Clauses/commands used for retrieving data from dbs.
 - ORDER BY Sorts the results based on specified criteria
 - Aggregate Functions 
 
-<summary><h3>2. Data Definition Language (DDL) </h3></summary>
+2. Data Definition Language (DDL)
 - CREATE TABLE: Create a new table.
 - ALTER TABLE: Modify an existing table's structure.
 - DROP TABLE: Delete a table from the database.
