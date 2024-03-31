@@ -9,6 +9,7 @@ Clauses/commands used for retrieving data from dbs.
 - `FROM` *TableName* Specify the source table.
 - `WHERE` Filters rows based on specified conditions. Often uses operators 
 > (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `BETWEEN` a range, `LIKE` Search for Patterns, `IN` Specify desired values*)
+> `GROUP BY`
 - JOINS Combines data from multiple tables
 > `INNER JOIN`
 > 
@@ -16,7 +17,9 @@ Clauses/commands used for retrieving data from dbs.
 > 
 > `RIGHT JOIN` 
 - `ORDER BY` Sorts the results based on specified criteria
-- AGGREGATE FUNCTIONS group data. Ex: `SUM()` `AVG()` `MIN()` `MAX()` `COUNT()` `GROUP_CONCAT()()` `STDEV() / STDEV_SAMP() / STDEV_POP()` `VAR()` `COUNT()` `COUNT()`
+- AGGREGATE FUNCTIONS group data. Every RDBMS uses different versions, so refer to their RDBMS' documentation. Simply search 'RDBMS' Aggregate functions.
+>> For ORACLE https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Aggregate-Functions.html#GUID-62BE676B-AF18-4E63-BD14-25206FEA0848
+> Examples include `SUM()` `AVG()` `MIN()` `MAX()` `COUNT()` `GROUP_CONCAT()()` `STDEV() / STDEV_SAMP() / STDEV_POP()` `VAR()` `COUNT()` `COUNT()`
 - Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
 
 ## 2. Data Definition Language (DDL)
