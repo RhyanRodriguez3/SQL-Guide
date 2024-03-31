@@ -1,6 +1,8 @@
 # **SQL Guide**
 Contains SQL code for reuse and projects
 
+https://www.youtube.com/watch?v=9A8sQZDRn5o
+
 ## 1. Data Query Language (DQL): Clauses/commands used for retrieving data from dbs.
 - `SELECT` *Column1* Retrieves all data or specific columns from a db.
 - `DISTINCT` Removes duplicate records from a column.
