@@ -16,7 +16,7 @@ Clauses/commands used for retrieving data from dbs.
 > 
 > `RIGHT JOIN` 
 - `ORDER BY` Sorts the results based on specified criteria
-- AGGREGATE FUNCTIONS group data. Ex: `SUM` `AVG` `MIN` `MAX` `COUNT`
+- AGGREGATE FUNCTIONS group data. Ex: `SUM()` `AVG()` `MIN()` `MAX()` `COUNT()` `GROUP_CONCAT()()` `STDEV() / STDEV_SAMP() / STDEV_POP()` `VAR()` `COUNT()` `COUNT()`
 - Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
 
 ## 2. Data Definition Language (DDL)
