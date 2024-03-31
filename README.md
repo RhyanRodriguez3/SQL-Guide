@@ -3,16 +3,16 @@ Contains SQL code for reuse and projects
 
 ## 1. Data Query Language (DQL): Clauses/commands used for retrieving data from dbs.
 - `SELECT` *Column1* Retrieves all data or specific columns from a db.
-- DISTINCT Removes duplicate records from a column.
-- FROM *TableName* Specify the source table.
-- WHERE *InputCondition InputOperator InputCondition*
+- `DISTINCT` Removes duplicate records from a column.
+- `FROM` *TableName* Specify the source table.
+- `WHERE` *InputCondition InputOperator InputCondition*
 > (*Operators are =, >= Greater than or equal to, < less than, <> Not Equal, **BETWEEN** range, LIKE InputPattern, IN SpecifiedValues*)
 - JOINS Combines data from multiple tables
-> INNER JOIN
+> `INNER JOIN`
 > 
-> LEFT JOIN
+> `LEFT JOIN`
 > 
-> RIGHT JOIN 
+> `RIGHT JOIN` 
 - ORDER BY Sorts the results based on specified criteria
 - Aggregate Functions 
 
