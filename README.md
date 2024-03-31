@@ -3,6 +3,7 @@ Contains SQL code for reuse and projects
 
 ## 1. Data Query Language (DQL)
 Clauses/commands to retrieve data from db. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
+https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
 
 - `SELECT` *ColumnName1* Retrieves all data or specific columns from a db.
 - FUNCTIONS (AGGREGATE) Perform a calculation on sets of values and returns a single result. Every RDBMS uses different versions, simply search their aggregate function documentation.
