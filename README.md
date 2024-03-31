@@ -4,7 +4,7 @@ Contains SQL code for reuse and projects
 ## 1. Data Query Language (DQL)
 Clauses/commands to retrieve data from db. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
 
-- `SELECT` *Column1* Retrieves all data or specific columns from a db.
+- `SELECT` *ColumnName1* Retrieves all data or specific columns from a db.
 - `DISTINCT` Removes duplicate records from a column.
 - `FROM` *TableName* Specify the source table.
 - `WHERE` Filters rows based on specified conditions. Often uses operators 
@@ -12,14 +12,16 @@ Clauses/commands to retrieve data from db. https://learnsql.com/blog/standard-sq
 > (*Conditions for strings/text use wildcards `%` represents zero or multiple characters `_` represents a single character*)
 > `GROUP BY` *Groups* rows with the same values into summary rows. Often used with aggregate functions.
 - JOINS Combines data from multiple tables
-> `INNER JOIN`
+> `SELECT` * `FROM` *TableName1* `AS` *TableNameAbbr1* `INNER JOIN` *TableName2* `AS` *TableNameAbbr2* `ON` *TableNameAbbr1.IDColumnName* `=` *TableNameAbbr2.IDColumnName*
 > 
 > `LEFT JOIN`
 > 
 > `RIGHT JOIN` 
 - `ORDER BY` Sorts the results based on specified criteria
-- AGGREGATE FUNCTIONS group data. Every RDBMS uses different versions, simply search their aggregate function documentation.
+- FUNCTIONS (AGGREGATE) Perform a calculation on sets of values and returns a single result. Every RDBMS uses different versions, simply search their aggregate function documentation.
 > Examples include `SUM()` `AVG()` `MIN()` `MAX()` `COUNT()` `GROUP_CONCAT()()` `STDEV() / STDEV_SAMP() / STDEV_POP()` `VAR()` `COUNT()` `COUNT()`
+>
+> `GETDATE()` Autofill rows for a Date Column.
 - Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
 
 
@@ -27,9 +29,11 @@ Clauses/commands to retrieve data from db. https://learnsql.com/blog/standard-sq
 Manipulate the database tables. Commands used to add, modify, or delete data in tables.
 
 - Create a new table: `CREATE TABLE();` *ColumnName1 DataType(CharAmnt)*
-> *It is good practice to have the first column be the ID*: `PRIMARY KEY` `IDENTITY(1,1)` 
-- Change row values in a column: `UPDATE` *TableName* `SET` *ColumnName1 = Condition*; ```Rows
+> *It is good practice to have the first column be ID*: `PRIMARY KEY` `IDENTITY(1,1),`
+- Created indexes on columns to retrieve data quickly from db `CREATE UNIQUE INDEX` *index_name* `ON` *table_name (column1, column2, ...)*; `DROP INDEX` *index_name ON table_name*;
+- Change row values in a column: `UPDATE` *TableName* `SET` *ColumnName1 = Condition*;
 - Add columns to a table: `ALTER TABLE` *TableName* `ADD` *NewColumnName DataType(CharAmnt)*
+- > *With multiple tables, it is good practice to have foreign Keys on ID columns*: `ALTER TABLE` *TableName* `ADD` `FOREIGN KEY()` *NewColumnName* `REFERENCES` *TableName(IDColumn)*
 - Add rows to a table `INSERT INTO` *TableName (ColumnName1,ColumnName1, etc)* `VALUES();`
 - Delete row values from a table, but doesn't delete the table structure: `DELETE` *TableName*; 
 - Deletes a table from the db: `DROP TABLE` *TableName*; 
