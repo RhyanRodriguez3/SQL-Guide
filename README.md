@@ -22,6 +22,7 @@ Clauses/commands used for retrieving data from dbs.
 > `MIN`
 > `MAX`
 > `COUNT`
+- Limit commands *limit* the number of rows returned. Ex: `TOP``LIMIT`
 
 ## 2. Data Definition Language (DDL)
 - CREATE TABLE: Create a new table.
