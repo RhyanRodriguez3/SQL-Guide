@@ -1,8 +1,8 @@
 # **SQL Guide**
-Contains SQL code for reuse and projects. Data manipulation - Show functions and create custom measures and calculated columns and Db manipulation - Create a data table from scratch and manage the engine
+Contains SQL code for reuse and projects. Structured Query Language is a non procedural language used to manipulate data (DQL) and databases (DDL and DML). There are many RDBMSs such as Oracle, MS SQL Server, MySQL, and MariaDB.
 
 ## 1. Data Query Language (DQL)
-Commands to retrieve and manipulate data from db. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
+Commands to retrieve and manipulate data from db. Shows functions and create custom measures and Calc Columns. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
 https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
 
 - `SELECT` *ColumnName1* Retrieves all data or specific columns from a db.
@@ -30,7 +30,7 @@ https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
 
 
 ## 2. Data Definition & Manipulation Language (DDL) & Data Manipulation Language (DML)
-Manipulate the database tables. Commands to add, modify, and delete data in tables.
+Manipulate the database tables. Commands to add, modify, and delete data in tables. Create a data table from scratch and manage the engine
 
 - Create a new table: `CREATE TABLE();` *ColumnName1 DataType(CharAmnt)*
 > *It is good practice to have the first column be ID*: `PRIMARY KEY` `IDENTITY(1,1),`
