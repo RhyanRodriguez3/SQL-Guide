@@ -14,7 +14,9 @@ Clauses/commands to retrieve data from db. https://learnsql.com/blog/standard-sq
 - `FROM` *TableName* Specify the source table.
 > `GROUP BY` *Groups* rows with the same values into summary rows. Often used with aggregate functions.
 - JOINS Combines data from multiple tables
-> `SELECT` * `FROM` *TableName1* `AS` *TableNameAbbr1* `INNER JOIN` *TableName2* `AS` *TableNameAbbr2* `ON` *TableNameAbbr1.IDColumnName* `=` *TableNameAbbr2.IDColumnName*
+> `SELECT` * `FROM` *TableName1* `AS` *TableNameAbbr1*
+>
+> `INNER JOIN` *TableName2* `AS` *TableNameAbbr2* `ON` *TableNameAbbr1.IDColumnName* `=` *TableNameAbbr2.IDColumnName*
 > 
 > `LEFT JOIN`
 > 
