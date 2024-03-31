@@ -6,7 +6,7 @@ Contains SQL code for reuse and projects
 - DISTINCT: Removes duplicate records from a column.
 - FROM TableName: The specified source table.
 - WHERE InputCondition InputOperator InputCondition
-    (*Operators are =, >= Greater than or equal to, < less than, <> Not Equal, **BETWEEN** range, LIKE InputPattern, IN SpecifiedValues*)
+>(*Operators are =, >= Greater than or equal to, < less than, <> Not Equal, **BETWEEN** range, LIKE InputPattern, IN SpecifiedValues*)
 
 ## 2. Data Definition Language (DDL)
 - CREATE TABLE: Create a new table.
