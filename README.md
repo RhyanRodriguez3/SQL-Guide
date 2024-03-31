@@ -1,5 +1,5 @@
 # **SQL Guide**
-SQL is used to manipulate data (DQL) and databases (DDL, DML, and DCL). There are many RDBMSs such as Oracle which uses PL/SQL, MS SQL Server, MySQL, and MariaDB.
+SQL is used to manipulate data (DQL) and databases (DDL, DML, and DCL). There are many RDBMSs such as Oracle, MS SQL Server, MySQL, and MariaDB. Oracle uses PL/SQL (Procedural Language SQL), that allows users to add conditional statements, looping statements, user defined functions and procedures, exceptions, etc to create actual programs.
 
 ## 1. Data Query Language (DQL)
 Commands to retrieve and manipulate data from db. Shows functions and create custom measures and Calc Columns. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
