@@ -29,8 +29,8 @@ https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
 - Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
 
 
-## 2. Database Definition & Manipulation Language (DDL) & Database Manipulation Language (DML)
-Manipulate the database tables. Commands used to add, modify, or delete data in tables.
+## 2. Data Definition & Manipulation Language (DDL) & Data Manipulation Language (DML)
+Manipulate the database tables. Commands to add, modify, and delete data in tables.
 
 - Create a new table: `CREATE TABLE();` *ColumnName1 DataType(CharAmnt)*
 > *It is good practice to have the first column be ID*: `PRIMARY KEY` `IDENTITY(1,1),`
@@ -52,14 +52,14 @@ Manipulate the database tables. Commands used to add, modify, or delete data in 
 - REVOKE: Take back privileges from database users.
 
 
-## 5. Transaction Control Language (TCL):
+## 4. Transaction Control Language (TCL):
 
 - COMMIT: Save changes made during the current transaction.
 - ROLLBACK: Undo changes made during the current transaction.
 - SAVEPOINT: Set a point within a transaction to which you can later roll back.
 
 
-## 6. Schema Manipulation Language (SML):
+## 5. Schema Manipulation Language (SML):
 
 - CREATE SCHEMA: Create a new schema.
 - ALTER SCHEMA: Modify an existing schema.
