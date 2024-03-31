@@ -1,12 +1,17 @@
 # **SQL Guide**
 Contains SQL code for reuse and projects
 
-## 1. Data Query Language (DQL): Used for retrieving data from dbs.
+## 1. Data Query Language (DQL): Clauses used for retrieving data from dbs.
 - SELECT *Column1* Retrieves all data or specific columns from a db.
 - DISTINCT Removes duplicate records from a column.
 - FROM *TableName* Specify the source table.
 - WHERE *InputCondition InputOperator InputCondition*
->(*Operators are =, >= Greater than or equal to, < less than, <> Not Equal, **BETWEEN** range, LIKE InputPattern, IN SpecifiedValues*)
+> (*Operators are =, >= Greater than or equal to, < less than, <> Not Equal, **BETWEEN** range, LIKE InputPattern, IN SpecifiedValues*)
+- JOINS Combines data from multiple tables
+> INNER JOIN 
+> LEFT JOIN 
+> RIGHT JOIN 
+- ORDER BY
 
 ## 2. Data Definition Language (DDL)
 - CREATE TABLE: Create a new table.
