@@ -15,8 +15,8 @@ Clauses/commands used for retrieving data from dbs.
 > `LEFT JOIN`
 > 
 > `RIGHT JOIN` 
-- ORDER BY Sorts the results based on specified criteria
-- Aggregate Functions 
+- `ORDER BY` Sorts the results based on specified criteria
+- Aggregate Functions group data
 > `SUM`
 > `AVG`
 > `MIN`
