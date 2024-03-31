@@ -1,4 +1,4 @@
-# **SQL Guide**
+**SQL Guide**
 Contains SQL code for reuse and projects
 
 ## 1. Data Query Language (DQL): Used for retrieving data from dbs.
