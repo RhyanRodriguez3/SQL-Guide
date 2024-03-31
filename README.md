@@ -32,7 +32,7 @@ https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
 </details>
 
 <details>
-<summary>2. Data Definition & Manipulation Language (DDL) & Data Manipulation Language (DML)</summary>
+<summary>2. Data Definition/Manipulation Language (DDL)/(DML)</summary>
 Manipulate the database tables. Commands to add, modify, and delete data in tables. Create a data table from scratch and manage the engine
 
 - Create a new table: `CREATE TABLE();` *ColumnName1 DataType(CharAmnt)*
