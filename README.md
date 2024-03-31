@@ -75,9 +75,8 @@ Manipulate the database tables. Commands to add, modify, and delete data in tabl
 
 <details>
   <summary>Sources</summary>
-#
 
-### 📺 Latest YouTube Videos
+### 📺 Youtube University - Check out their channels!
 
 <!-- BEGIN YOUTUBE-CARDS -->
 [![Win this RTX 4090 signed by Jensen Huang](https://ytcards.demolab.com/?id=VybxPh8Trls&title=Win+this+RTX+4090+signed+by+Jensen+Huang&lang=en&timestamp=1710538911&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&max_title_lines=1&width=250&border_radius=5&duration=50 "Win this RTX 4090 signed by Jensen Huang")](https://www.youtube.com/watch?v=VybxPh8Trls)
