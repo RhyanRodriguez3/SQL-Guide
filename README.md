@@ -8,8 +8,9 @@ Clauses/commands used for retrieving data from dbs. https://learnsql.com/blog/st
 - `DISTINCT` Removes duplicate records from a column.
 - `FROM` *TableName* Specify the source table.
 - `WHERE` Filters rows based on specified conditions. Often uses operators 
-> (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `BETWEEN` a range, `LIKE` Search for Patterns, `IN` Specify desired values*)
-> `GROUP BY`
+> (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `AND` multiple conditions `BETWEEN` a range, `LIKE` Search for Patterns, `IN` Specify desired values*)
+> (*Conditions for strings/text use wildcards `%` represents zero or multiple characters `_` represents a single character*)
+> `GROUP BY` *Groups* rows with the same values into summary rows. Often used with aggregate functions.
 - JOINS Combines data from multiple tables
 > `INNER JOIN`
 > 
@@ -21,20 +22,20 @@ Clauses/commands used for retrieving data from dbs. https://learnsql.com/blog/st
 > Examples include `SUM()` `AVG()` `MIN()` `MAX()` `COUNT()` `GROUP_CONCAT()()` `STDEV() / STDEV_SAMP() / STDEV_POP()` `VAR()` `COUNT()` `COUNT()`
 - Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
 
-## 2. Data Definition Language (DDL)
+## 2. Database Definition Language (DDL)
 - CREATE TABLE: Create a new table.
 - ALTER TABLE: Modify an existing table's structure.
 - DROP TABLE: Delete a table from the database.
 - CREATE INDEX: Create an index on a table.
 - DROP INDEX: Delete an index from the database.
 
-## 3. Data Manipulation Language (DML): Commands used to add, modify, or delete data in tables.
+## 3. Database Manipulation Language (DML): Commands used to add, modify, or delete data in tables.
 - INSERT INTO: Insert new records into a table.
-- UPDATE: Modify existing records in a table.
+- `UPDATE` *TableName* `SET` *ColumnName1 = Condition* Modify existing records in a table.
 - DELETE FROM: Delete records from a table.
 - TRUNCATE TABLE: Removes all records from a table in a database, but keeps the table and structure in place.
 
-## 4. Data Control Language (DCL):
+## 4. Database Control Language (DCL):
 - GRANT: Give privileges to database users.
 - REVOKE: Take back privileges from database users.
 
