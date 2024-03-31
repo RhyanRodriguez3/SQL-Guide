@@ -9,6 +9,7 @@ Clauses/commands used for retrieving data from dbs.
 - `FROM` *TableName* Specify the source table.
 - `WHERE` Filters rows based on specified conditions. Often uses operators 
 > (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal
+>
 > `BETWEEN` range, `LIKE` InputPattern, `IN` SpecifiedValues*)
 - JOINS Combines data from multiple tables
 > `INNER JOIN`
