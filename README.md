@@ -23,11 +23,13 @@ Clauses/commands to retrieve data from db. https://learnsql.com/blog/standard-sq
 - Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
 
 
-## 2. Database Definition Language (DDL)
+## 2. Database Definition & Manipulation Language (DDL) & (DML)
 Manipulate the database tables.
 
-- `CREATE TABLE( *ColumnName1 DataType(Value),*);` Create a new table.
-- ALTER TABLE: Modify an existing table's structure.
+- `CREATE TABLE()` *ColumnName1 DataType(CharAmnt)* Create a new table.
+- `UPDATE` *TableName* `SET` *ColumnName1 = Condition*; Modify row values in a column.
+- `ALTER TABLE` *TableName* `ADD` *NewColumnName DataType(CharAmnt)* Add columns to a table.
+- `DELETE` *TableName* Delete row values from a table, but doesn't delete the table structure.
 - DROP TABLE: Delete a table from the database.
 - CREATE INDEX: Create an index on a table.
 - DROP INDEX: Delete an index from the database.
@@ -36,8 +38,7 @@ Manipulate the database tables.
 ## 3. Database Manipulation Language (DML): Commands used to add, modify, or delete data in tables.
 
 - INSERT INTO: Insert new records into a table.
-- `UPDATE` *TableName* `SET` *ColumnName1 = Condition*; Modify existing records in a table.
-- `DELETE` *TableName* : Delete records from a table.
+
 - TRUNCATE TABLE: Removes all records from a table in a database, but keeps the table and structure in place.
 
 
