@@ -2,7 +2,7 @@
 Structured Query Language (SQL), is a programming language designed to manipulate data (DQL) and databases (DDL, DML, and DCL). There are many RDBMSs such as Oracle and MS SQL Server which have different versions of SQL but the language is standardized by ANSI. This is a fundemantals guide to get you on your way. Each file in this repo contains SQL projects and codes for reuse.
 
 <details>
-  <summary>Other</summary>
+  <summary>1. Data Query Language (DQL) are commands to retrieve and manipulate data.</summary>
 
 Commands to retrieve and manipulate data from db. Shows functions and create custom measures and Calc Columns. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
 https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
@@ -50,29 +50,22 @@ Manipulate the database tables. Commands to add, modify, and delete data in tabl
 </details>
 
 <details>
-  <summary>1. Data Query Language (DQL) are commands to retrieve and manipulate data.</summary>
-## 3. Database Control Language (DCL)
-
+  <summary>Other</summary>
+      ## 3. Database Control Language (DCL)
 - GRANT: Give privileges to database users.
 - REVOKE: Take back privileges from database users.
 
-
-## 4. Transaction Control Language (TCL):
-
+      ## 4. Transaction Control Language (TCL):
 - COMMIT: Save changes made during the current transaction.
 - ROLLBACK: Undo changes made during the current transaction.
 - SAVEPOINT: Set a point within a transaction to which you can later roll back.
 
-
 ## 5. Schema Manipulation Language (SML):
-
 - CREATE SCHEMA: Create a new schema.
 - ALTER SCHEMA: Modify an existing schema.
 - DROP SCHEMA: Delete a schema from the database.
 
-
 ## 7. Other Commands:
-
 - USE: Select a particular database.
 - SHOW: Display information about the database.
 - DESCRIBE: Show the structure of a table.
