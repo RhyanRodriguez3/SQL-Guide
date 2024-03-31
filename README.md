@@ -8,8 +8,10 @@ Contains SQL code for reuse and projects
 - WHERE *InputCondition InputOperator InputCondition*
 > (*Operators are =, >= Greater than or equal to, < less than, <> Not Equal, **BETWEEN** range, LIKE InputPattern, IN SpecifiedValues*)
 - JOINS Combines data from multiple tables
-> INNER JOIN 
-> LEFT JOIN 
+> INNER JOIN
+> 
+> LEFT JOIN
+> 
 > RIGHT JOIN 
 - ORDER BY
 
