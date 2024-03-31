@@ -8,7 +8,7 @@ Clauses/commands used for retrieving data from dbs.
 - `DISTINCT` Removes duplicate records from a column.
 - `FROM` *TableName* Specify the source table.
 - `WHERE` Filters rows based on specified conditions. Often uses operators 
-> (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `BETWEEN` range, `LIKE` InputPattern, `IN` SpecifiedValues*)
+> (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `BETWEEN` a range, `LIKE` Search for Patterns, `IN` Specify desired values*)
 - JOINS Combines data from multiple tables
 > `INNER JOIN`
 > 
