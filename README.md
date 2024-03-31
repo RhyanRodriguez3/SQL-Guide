@@ -1,6 +1,8 @@
 # **SQL Guide**
 SQL is used to manipulate data (DQL) and databases (DDL, DML, and DCL). There are many RDBMSs such as Oracle, MS SQL Server, etc which have different versions of SQL but the language is standardized by ANSI.
 
+<details>
+  <summary>Click to expand</summary>
 ## 1. Data Query Language (DQL)
 Commands to retrieve and manipulate data from db. Shows functions and create custom measures and Calc Columns. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
 https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
@@ -27,7 +29,7 @@ https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
 > (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `AND` multiple conditions `BETWEEN` a range, `LIKE` Search for Patterns, `IN` Specify desired values*)
 > (*Conditions for strings/text use wildcards `%` represents zero or multiple characters `_` represents a single character*)
 - Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
-
+</details>
 
 ## 2. Data Definition & Manipulation Language (DDL) & Data Manipulation Language (DML)
 Manipulate the database tables. Commands to add, modify, and delete data in tables. Create a data table from scratch and manage the engine
