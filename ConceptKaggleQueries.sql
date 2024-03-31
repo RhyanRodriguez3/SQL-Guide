@@ -18,6 +18,18 @@ SELECT * FROM TableName1; -- Test if the table was created. Then load/import rec
 -- To import the records, use the import feature in your RDBMS. Troubleshoot values if import errors.
 
 
+-- Turn data type str into int and rename new column 
+SELECT *, Column1, CAST(REPLACE(Price,'$','')), AS UNSIGNED) AS [NewColumnName]
+FROM table_name;
+
+
+/* JOINS
+Inner Joins are best for only keeping the columns from both tables
+Left and right joins are best for keeping only the similar columns and one table
+Full outer joins combine and pull all the table column.
+*/
+
+
 /* When problem solving, ask yourself "What variables does the client want to know? Where are those variables in the dataset? How can I manipulate the dataset to provide answers and automate the report?" */
 WITH t1 AS  -- Create a temp table to atomize the dataset and focus on specific parts of the question your looking for
     (SELECT COUNT(ColumnName1) AS NewColumnName1  -- Creates a calculated column, which renames the column and computes the values in the sourced column
