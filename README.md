@@ -6,7 +6,7 @@ Contains SQL code for reuse and projects
 - `DISTINCT` Removes duplicate records from a column.
 - `FROM` *TableName* Specify the source table.
 - `WHERE` *InputCondition InputOperator InputCondition*
-> (*Operators are =, >= Greater than or equal to, < less than, <> Not Equal, **BETWEEN** range, LIKE InputPattern, IN SpecifiedValues*)
+> (*Operators are `=`, `>=` Greater than or equal to, `<` less than, `<>` Not Equal, `BETWEEN` range, `LIKE` InputPattern, `IN` SpecifiedValues*)
 - JOINS Combines data from multiple tables
 > `INNER JOIN`
 > 
