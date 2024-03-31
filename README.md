@@ -1,7 +1,7 @@
 # **SQL Guide**
 Contains SQL code for reuse and projects
 
-## 1. Data Query Language (DQL): Clauses used for retrieving data from dbs.
+## 1. Data Query Language (DQL): Clauses and sets of commands used for retrieving data from dbs.
 - SELECT *Column1* Retrieves all data or specific columns from a db.
 - DISTINCT Removes duplicate records from a column.
 - FROM *TableName* Specify the source table.
@@ -13,7 +13,8 @@ Contains SQL code for reuse and projects
 > LEFT JOIN
 > 
 > RIGHT JOIN 
-- ORDER BY
+- ORDER BY Sorts the results based on specified criteria
+- Aggregate Functions 
 
 ## 2. Data Definition Language (DDL)
 - CREATE TABLE: Create a new table.
@@ -22,7 +23,7 @@ Contains SQL code for reuse and projects
 - CREATE INDEX: Create an index on a table.
 - DROP INDEX: Delete an index from the database.
 
-## 3. Data Manipulation Language (DML)
+## 3. Data Manipulation Language (DML): Commands used to add, modify, or delete data in tables.
 - INSERT INTO: Insert new records into a table.
 - UPDATE: Modify existing records in a table.
 - DELETE FROM: Delete records from a table.
