@@ -3,7 +3,8 @@ This is a SQL guide for beginner level queries.
 We will be going over statement structure (the syntax and major clauses) and aggregate functions for data manipulation.
 */
 
--- This is the basic structure to retreive data from the db.
+
+-- This is the basic statement structure to retreive data from the db.
     SELECT ColumnNames(s) AS RenameColumn(s)
     FROM TableName
     JOIN TableName1 AS RenamedTable ON RenamedTable1.IDColumnName = RenamedTable2.IDColumnName
@@ -23,6 +24,7 @@ We will be going over statement structure (the syntax and major clauses) and agg
       */
     ORDER BY ColumnNameYouWantSorted ON SpecifiedCriteria
     LIMIT or TOP;
+
 
 -- Aggregate functions are calculations on data that return a summary row. RDBMS functions very, so simply your RDBMS' aggregate function documentation.
 GROUP BY
