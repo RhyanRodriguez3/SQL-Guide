@@ -8,6 +8,12 @@ Structured Query Language (SQL) is used to manipulate data and databases. RDBMS 
 ## 🗂️ Manipulate the Database structure with DDL, DML, and DCL
 > These files explain how the database engine works and RDBMS tools.
 
+## ✍🏼 Practice Tutorials
+> Now that you understand the concepts and fundamentals, these files are personal learning projects.
+>
+> "We talkin bout, PRACTICE"🗦🐐3️⃣⁉️
+
+
 <details>
   <summary>WIP</summary>
 - Create a new table: `CREATE TABLE();` *ColumnName1 DataType(CharAmnt)*
