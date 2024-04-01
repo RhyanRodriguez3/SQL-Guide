@@ -6,9 +6,10 @@ Structured Query Language (SQL) is used to manipulate data and databases. RDBMS 
 > Each file contains queries from beginner to advanced.
 
 ## 🗂️ Manipulate the Database structure with DDL, DML, and DCL
+> These files explain how the database engine works and RDBMS tools.
 
-Manipulate the database tables. Commands to add, modify, and delete data in tables. Create a data table from scratch and manage the engine
-
+<details>
+  <summary>WIP</summary>
 - Create a new table: `CREATE TABLE();` *ColumnName1 DataType(CharAmnt)*
 > *It is good practice to have the first column be ID*: `PRIMARY KEY` `IDENTITY(1,1),`
 - Created indexes on columns to retrieve data quickly from db `CREATE UNIQUE INDEX` *index_name* `ON` *table_name (column1, column2, ...)*; `DROP INDEX` *index_name ON table_name*;
