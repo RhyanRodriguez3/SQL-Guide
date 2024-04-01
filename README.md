@@ -1,48 +1,17 @@
 # **SQL Guide**
 
-Structured Query Language (SQL) is used to manipulate data (DQL) and manipulate databases (DDL, DML, and DCL). Relational DataBase Management Systems (RDBMS) such as Oracle and MS SQL Server have different versions of SQL but the statements are standardized. 
+Structured Query Language (SQL) is used to manipulate data and databases. RDBMS such as Oracle and MS SQL Server have different versions of SQL but the statements are standardized. 
 
-## 1. Data Query Language (DQL) 
-These are statement commands to retrieve and manipulate data.
+## 1. Manipulate Data with DQL 
+Each file contains queries from beginner to advanced.
 <details>
   <summary>Beginner Statement Structure</summary> 
 
-> `SELECT` *Column(s)* `AS` *RenamedColumn(s)*
->
-> `FROM` *Table*
->
->
-> `JOIN(S)`
->>
->> `INNER JOIN` *TableName2* `AS` *TableNameAbbr2* `ON` *TableNameAbbr1.IDColumnName* `=` *TableNameAbbr2.IDColumnName*
->>
->> `LEFT JOIN`
->>
->> `RIGHT JOIN`
->
-> `ORDER BY` Sorts the results based on specified criteria
-> 
-> `WHERE` Filters rows based on specified conditions. Often uses operators 
->> (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `AND` multiple conditions `BETWEEN` a range, `LIKE` Search for Patterns, `IN` Specify desired values*)
-> (*Conditions for strings/text use wildcards `%` represents zero or multiple characters `_` represents a single character*)
-> Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
-</details>
 
-<details>
-  <summary>Aggregate Functions perform calculations on value sets and returns a single result. RDBMS uses different versions, simply search their aggregate function documentation.</summary>
-<br />
-very 
-
-> `GROUP BY` 
-> Examples include `SUM()` `AVG()` `MIN()` `MAX()` `COUNT()` `GROUP_CONCAT()()` `STDEV() / STDEV_SAMP() / STDEV_POP()` `VAR()` `COUNT()` `COUNT()`
->
-> `GETDATE()` Autofill rows for a Date Column.
-> 
-> `DISTINCT` Removes duplicate records from a column.
 
 </details>
 
-## 2. Data Definition/Manipulation Language (DDL)/(DML)
+## 2. Manipulate Databases with DDL, DML, and DCL
 <details>
   <summary>Creating Tables</summary>
 Manipulate the database tables. Commands to add, modify, and delete data in tables. Create a data table from scratch and manage the engine
