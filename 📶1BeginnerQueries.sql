@@ -6,17 +6,21 @@ We will be going over statement structure (the syntax and major clauses) and agg
 -- This is the basic structure to retreive data from the db.
 SELECT ColumnNames(s) AS RenameColumn(s)
 FROM TableName
+JOIN TableName1 AS RenamedTable ON RenamedTable1.IDColumnName = RenamedTable2.IDColumnName
+  /*
+  JOIN clauses allow you to pull data from multiple tables.
+  INNER JOIN is best for 
+  LEFT JOIN is used when 
+  RIGHT JOIN is used when
+  */
+SELECT ColumnNames(s) AS RenameColumn(s)
+FROM TableName
 
--- JOIN clauses allow you to pull data from multiple tables. Know when to use each.
-  
-INNER JOIN TableName1 `AS` RenamedTable ON RenameTableName1.IDColumnName `=` *TableNameAbbr2.IDColumnName*
 
-LEFT JOIN
-RIGHT JOIN
 
 ORDER BY` Sorts the results based on specified criteria
-> 
-> `WHERE` Filters rows based on specified conditions. Often uses operators 
+
+WHERE` Filters rows based on specified conditions. Often uses operators 
 >> (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `AND` multiple conditions `BETWEEN` a range, `LIKE` Search for Patterns, `IN` Specify desired values*)
 > (*Conditions for strings/text use wildcards `%` represents zero or multiple characters `_` represents a single character*)
 > Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
