@@ -1,37 +1,46 @@
 # **SQL Guide**
-- Each file in this repo contains SQL codes for reuse.
-- Structured Query Language (SQL) manipulates data with DQL and databases with DDL, DML, and DCL.
-- Relational DataBase Management Systems (RDBMS) such as Oracle and MS SQL Server have different versions of SQL. 
+Each file in this repo contains SQL codes for reuse. <br />
+Structured Query Language (SQL) manipulates data with DQL and databases with DDL, DML, and DCL. <br />
+Relational DataBase Management Systems (RDBMS) such as Oracle and MS SQL Server have different versions of SQL. 
 
-## 1. Data Query Language (DQL) are commands to retrieve and manipulate data.
+## 1. Data Query Language (DQL) 
+These are statement commands to retrieve and manipulate data.
 <details>
-  <summary>Common Commands</summary>
+  <summary>Beginner Statement Structure</summary> 
 
-Commands to retrieve and manipulate data from db. Shows functions and create custom measures and Calc Columns. https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
-https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
+> `SELECT` *Column(s)* `AS` *RenamedColumn(s)*
+>
+> `FROM` *Table*
+>
+>
+> `JOIN(S)`
+>>
+>> `INNER JOIN` *TableName2* `AS` *TableNameAbbr2* `ON` *TableNameAbbr1.IDColumnName* `=` *TableNameAbbr2.IDColumnName*
+>>
+>> `LEFT JOIN`
+>>
+>> `RIGHT JOIN`
+>
+> `ORDER BY` Sorts the results based on specified criteria
+> 
+> `WHERE` Filters rows based on specified conditions. Often uses operators 
+>> (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `AND` multiple conditions `BETWEEN` a range, `LIKE` Search for Patterns, `IN` Specify desired values*)
+> (*Conditions for strings/text use wildcards `%` represents zero or multiple characters `_` represents a single character*)
+> Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
+</details>
 
-- `SELECT` *ColumnName1* Retrieves all data or specific columns from a db.
-- FUNCTIONS (AGGREGATE) Perform a calculation on sets of values and returns a single result. Every RDBMS uses different versions, simply search their aggregate function documentation.
+<details>
+  <summary>Aggregate Functions perform calculations on value sets and returns a single result. RDBMS uses different versions, simply search their aggregate function documentation.</summary>
+<br />
+very 
+
+> `GROUP BY` 
 > Examples include `SUM()` `AVG()` `MIN()` `MAX()` `COUNT()` `GROUP_CONCAT()()` `STDEV() / STDEV_SAMP() / STDEV_POP()` `VAR()` `COUNT()` `COUNT()`
 >
 > `GETDATE()` Autofill rows for a Date Column.
 > 
 > `DISTINCT` Removes duplicate records from a column.
-- `FROM` *TableName* Specify the source table.
-> `GROUP BY` *Groups* rows with the same values into summary rows. Often used with aggregate functions.
-- JOINS Combines data from multiple tables
-> `SELECT` * `FROM` *TableName1* `AS` *TableNameAbbr1*
->
-> `INNER JOIN` *TableName2* `AS` *TableNameAbbr2* `ON` *TableNameAbbr1.IDColumnName* `=` *TableNameAbbr2.IDColumnName*
-> 
-> `LEFT JOIN`
-> 
-> `RIGHT JOIN` 
-- `ORDER BY` Sorts the results based on specified criteria
-- `WHERE` Filters rows based on specified conditions. Often uses operators 
-> (*Operators are `=`, `>=` Greater than or equal to, `<` Less than, `<>` Not Equal, `AND` multiple conditions `BETWEEN` a range, `LIKE` Search for Patterns, `IN` Specify desired values*)
-> (*Conditions for strings/text use wildcards `%` represents zero or multiple characters `_` represents a single character*)
-- Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
+
 </details>
 
 ## 2. Data Definition/Manipulation Language (DDL)/(DML)
@@ -88,6 +97,7 @@ Intermediate & Advanced SQL - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8
 SQL Engine and Interview Q&A - https://www.youtube.com/c/Csharp-video-tutorialsBlogspot/playlists
 Learn how the SQL Server Engine works w/ Brent Ozar - https://www.youtube.com/watch?v=fERXOywBhlA
 <!-- Comment -->
-
+https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
+https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
 
 </details>
