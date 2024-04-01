@@ -76,12 +76,13 @@ Manipulate the database tables. Commands to add, modify, and delete data in tabl
 <details>
   <summary>Sources</summary>
 
-### 😤📺 Youtube University - Check out their channels!
+### 😤📺 Youtube University - Check out their channels! 
 
-<!-- BEGIN YOUTUBE-CARDS -->
-[![Learn SQL Basics w/ Joey Blue]([https://ytcards.demolab.com/?id=VybxPh8Trls&title=Win+this+RTX+4090+signed+by+Jensen+Huang&lang=en&timestamp=1710538911&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&max_title_lines=1&width=250&border_radius=5&duration=50 "Win this RTX 4090 signed by Jensen Huang")](https://www.youtube.com/watch?v=VybxPh8Trls](https://www.youtube.com/@joeyblue1/playlists))
-[![How Data Structures & Algorithms are Actually Used](https://ytcards.demolab.com/?id=ALPWOiUKIjY&title=How+Data+Structures+%26+Algorithms+are+Actually+Used&lang=en&timestamp=1710513900&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&max_title_lines=1&width=250&border_radius=5&duration=699 "How Data Structures & Algorithms are Actually Used")](https://www.youtube.com/watch?v=ALPWOiUKIjY)
-<!-- END YOUTUBE-CARDS -->
+<!-- Comment -->
+Learn Beginner SQL w/ Joey Blue: https://www.youtube.com/@joeyblue1/playlists
+Intermediate & Advanced SQL - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/playlists
+SQL Engine and Interview Q&A - https://www.youtube.com/c/Csharp-video-tutorialsBlogspot/playlists
+<!-- Comment -->
 
 
 </details>
