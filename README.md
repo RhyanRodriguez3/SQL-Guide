@@ -3,12 +3,10 @@
 Structured Query Language (SQL) is used to manipulate data and databases. RDBMS such as Oracle and MS SQL Server have different versions of SQL. 
 
 ## 📶Manipulate Data with DQL
-Each file contains queries from beginner to advanced.
-
+> Each file contains queries from beginner to advanced.
 
 ## 🗂️ Manipulate the Database structure with DDL, DML, and DCL
-<details>
-  <summary>Creating Tables</summary>
+
 Manipulate the database tables. Commands to add, modify, and delete data in tables. Create a data table from scratch and manage the engine
 
 - Create a new table: `CREATE TABLE();` *ColumnName1 DataType(CharAmnt)*
@@ -60,6 +58,10 @@ Intermediate & Advanced SQL - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8
 SQL Engine and Interview Q&A - https://www.youtube.com/c/Csharp-video-tutorialsBlogspot/playlists <br />
 Learn how the SQL Server Engine works w/ Brent Ozar - https://www.youtube.com/watch?v=fERXOywBhlA <br />
 Joe Celko
+
+<details>
+  <summary>Creating Tables</summary>
+</details>
 -->
 https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
 https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
