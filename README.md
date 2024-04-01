@@ -1,7 +1,6 @@
 # **SQL Guide**
-Each file in this repo contains SQL codes for reuse. <br />
-Structured Query Language (SQL) is used to manipulate data (DQL) and manipulate databases (DDL, DML, and DCL). <br />
-Relational DataBase Management Systems (RDBMS) such as Oracle and MS SQL Server have different versions of SQL but the statements are standardized. 
+
+Structured Query Language (SQL) is used to manipulate data (DQL) and manipulate databases (DDL, DML, and DCL). Relational DataBase Management Systems (RDBMS) such as Oracle and MS SQL Server have different versions of SQL but the statements are standardized. 
 
 ## 1. Data Query Language (DQL) 
 These are statement commands to retrieve and manipulate data.
