@@ -96,6 +96,7 @@ Learn Beginner SQL w/ Joey Blue: https://www.youtube.com/@joeyblue1/playlists
 Intermediate & Advanced SQL - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/playlists
 SQL Engine and Interview Q&A - https://www.youtube.com/c/Csharp-video-tutorialsBlogspot/playlists
 Learn how the SQL Server Engine works w/ Brent Ozar - https://www.youtube.com/watch?v=fERXOywBhlA
+Joe Celko
 <!-- Comment -->
 https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
 https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
