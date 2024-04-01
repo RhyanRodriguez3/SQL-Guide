@@ -10,10 +10,9 @@ We will be going over statement structure (the syntax and major clauses) and agg
     JOIN TableName1 AS RenamedTable ON RenamedTable1.IDColumnName = RenamedTable2.IDColumnName
       /*
       JOIN clauses allow you to pull data from multiple tables.
-      INNER JOIN only pulls records from tables that match, and exclude values that don't.
-      LEFT/RIGHT JOINs pull records based on the original table columns. 
+      INNER JOIN only pulls rows from tables that match, and exclude values that don't.
+      LEFT/RIGHT JOINs pull rows based on the original table columns. 
       FULL OUTER JOIN pulls all table columns.
-      SELF JOIN is when you join a table to itself. These are used for hierchical data, when you need to find data that connects to other data values within the same table.
       */
     WHERE YourCondition -- Filters rows based on specified conditions. You define the conditions with operators. 
       /*
