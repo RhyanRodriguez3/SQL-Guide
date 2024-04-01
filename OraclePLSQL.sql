@@ -7,6 +7,12 @@ There are three major sections in a PL/SQL block statement
   2. BEGIN section is the written executable logical code. 
   3. EXCEPTION section contains executable code only when errors occur. Handles exceptions occurring during processing, used to place predefined or user defined exceptions. This is an optional section.
      END;
+
+PL/SQL - https://www.youtube.com/watch?v=dMZgdC8diEM&list=PLVCEF4zOWjki2pF6YXIgTQzHNbUtaKBqz
+-	create user defined functions and procedures we will discuss in detail about exception handling
+-	Where can I find all of window funcitons functions of SQL such as rank, dense rank, over, pivot function, joins and naming convention, 
+-	Create extension tablefunc?, crosstab, as result?, coalesce, selet position, partition by, having
+
 */
 
 /* First program in PL/SQL which prints variable results */
