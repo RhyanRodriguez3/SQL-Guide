@@ -2,7 +2,7 @@
 
 Structured Query Language (SQL) is used to manipulate data and databases. RDBMS such as Oracle and MS SQL Server have different versions of SQL. 
 
-## 📶Manipulate Data with DQL
+### 📶Manipulate Data with DQL
 > Each file contains queries from beginner to advanced.
 
 ## 🗂️ Manipulate the Database structure with DDL, DML, and DCL
