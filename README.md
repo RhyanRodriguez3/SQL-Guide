@@ -1,5 +1,7 @@
 # **SQL Guide**
-Structured Query Language (SQL) is used to manipulate data (DQL) and databases (DDL, DML, and DCL). There are many RDBMSs such as Oracle and MS SQL Server which have different versions of SQL, but these are the fundamentals. Each file in this repo contains SQL projects and codes for reuse.
+- Each file in this repo contains SQL projects and codes for reuse.
+- Structured Query Language (SQL) is used to manipulate data with DQL and databases with DDL, DML, and DCL.
+- There are many RDBMSs such as Oracle and MS SQL Server which have different versions of SQL. These are the fundamentals.
 
 <details>
   <summary>1. Data Query Language (DQL) are commands to retrieve and manipulate data.</summary>
@@ -82,6 +84,7 @@ Manipulate the database tables. Commands to add, modify, and delete data in tabl
 Learn Beginner SQL w/ Joey Blue: https://www.youtube.com/@joeyblue1/playlists
 Intermediate & Advanced SQL - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/playlists
 SQL Engine and Interview Q&A - https://www.youtube.com/c/Csharp-video-tutorialsBlogspot/playlists
+Learn how the SQL Server Engine works w/ Brent Ozar - https://www.youtube.com/watch?v=fERXOywBhlA
 <!-- Comment -->
 
 
