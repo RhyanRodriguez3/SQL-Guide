@@ -90,13 +90,13 @@ Manipulate the database tables. Commands to add, modify, and delete data in tabl
 
 ### 😤📺 Youtube University - Check out their channels! 
 
-<!-- Comment -->
-Learn Beginner SQL w/ Joey Blue: https://www.youtube.com/@joeyblue1/playlists
-Intermediate & Advanced SQL - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/playlists
-SQL Engine and Interview Q&A - https://www.youtube.com/c/Csharp-video-tutorialsBlogspot/playlists
-Learn how the SQL Server Engine works w/ Brent Ozar - https://www.youtube.com/watch?v=fERXOywBhlA
+<!--
+Learn Beginner SQL w/ Joey Blue: https://www.youtube.com/@joeyblue1/playlists <br />
+Intermediate & Advanced SQL - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/playlists <br />
+SQL Engine and Interview Q&A - https://www.youtube.com/c/Csharp-video-tutorialsBlogspot/playlists <br />
+Learn how the SQL Server Engine works w/ Brent Ozar - https://www.youtube.com/watch?v=fERXOywBhlA <br />
 Joe Celko
-<!-- Comment -->
+-->
 https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
 https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
 
