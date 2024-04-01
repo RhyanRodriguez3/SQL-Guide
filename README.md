@@ -1,7 +1,7 @@
-# **SQL Fundamentals Guide**
+# **SQL Guide**
 - Each file in this repo contains SQL codes for reuse.
-- Structured Query Language (SQL) is used to manipulate data with DQL and databases with DDL, DML, and DCL.
-- Relationship DataBase Management Systems (RDBMS) such as Oracle, MS SQL Server, etc have different versions of SQL. 
+- Structured Query Language (SQL) manipulates data with DQL and databases with DDL, DML, and DCL.
+- Relational DataBase Management Systems (RDBMS) such as Oracle and MS SQL Server have different versions of SQL. 
 
 ## 1. Data Query Language (DQL) are commands to retrieve and manipulate data.
 <details>
@@ -34,8 +34,9 @@ https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
 - Limit commands *limit* the number of rows returned. Ex: `TOP` `LIMIT`
 </details>
 
+## 2. Data Definition/Manipulation Language (DDL)/(DML)
 <details>
-  <summary>2. Data Definition/Manipulation Language (DDL)/(DML)</summary>
+  <summary>Creating Tables</summary>
 Manipulate the database tables. Commands to add, modify, and delete data in tables. Create a data table from scratch and manage the engine
 
 - Create a new table: `CREATE TABLE();` *ColumnName1 DataType(CharAmnt)*
