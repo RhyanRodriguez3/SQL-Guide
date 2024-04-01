@@ -17,7 +17,7 @@ Structured Query Language (SQL) is used to manipulate data and databases. RDBMS 
 <details>
   <summary>Sources</summary>
 
-### 😤📺 Youtube University! Check out these channels! 
+### 😤📺 Youtube University! Support these channels! 
 
 <!--
 Learn Beginner SQL w/ Joey Blue: https://www.youtube.com/@joeyblue1/playlists <br />
