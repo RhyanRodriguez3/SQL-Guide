@@ -4,14 +4,9 @@ Structured Query Language (SQL) is used to manipulate data and databases. RDBMS 
 
 ## 1. Manipulate Data with DQL 
 Each file contains queries from beginner to advanced.
-<details>
-  <summary>Beginner Statement Structure</summary> 
 
 
-
-</details>
-
-## 2. Manipulate Databases with DDL, DML, and DCL
+## 2. Manipulate the Database structure with DDL, DML, and DCL
 <details>
   <summary>Creating Tables</summary>
 Manipulate the database tables. Commands to add, modify, and delete data in tables. Create a data table from scratch and manage the engine
