@@ -26,12 +26,6 @@ To handle dates registered as text datatypes, use Isdate(). Other date functions
                 ELSE CAST(DateColumn AS DateType)
             END < 'XX/XX/XXXX'
 
-
--- SELF JOIN is when you join a table to itself. Used for hierchical data, when you need to find data connected to other data values within the same table.
-    SELECT TableName.ColumnName, TableName2.ColumnName
-    FROM TableName tbl1
-    INNER JOIN tbl1.IDColumnName = tbl2.IDColumnName
-
         
 -- Subqueries is creating a query and using the results from that query as a substitute for the table. TIP: Instead of multiple OR clauses, use IN clause.
     SELECT TableName.ColumnName
