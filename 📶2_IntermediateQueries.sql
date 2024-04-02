@@ -5,17 +5,21 @@ For a list of all SQL functions and syntax, refer to the RDBMS documentation.
 */
 
         
--- Subqueries is creating a query to reference another query's results. Can be used to combine data from other tables. 
-    SELECT TableName.ColumnName  -- Subqueries can be used in the select clause to create another column. Usually used for grouped column functions.
+-- Subqueries are nested queries used for filtering, joining, or aggregating data within a larger query.
+    SELECT TableName.ColumnName  -- Subqueries can also be used in the select clause to create calculated columns.
     FROM TableName tbl1
-    WHERE ColumnName IN ( -- TIP: Instead of multiple OR clauses, use IN clause.
-                        SELECT DISTINCT ColumnName AS 'RenamedColumn' -- The inner query can only have 1 column to retrieve.
+    WHERE ColumnName IN ( 
+                        SELECT DISTINCT ColumnName AS 'RenamedColumn' -- The inner query results in a smaller table.
                         FROM TableName2 tbl2
                         WHERE ColumnName IS NOT NULL
                         )
 
--- Windows functions allow users to partition, or group based on columns values.  
-        SELECT ColumnName1, FUNCTION(ColumnName) OVER(PARTITION BY ColumnName) -- Where the GROUP BY filters each ColumnName it uses the function on PARTITION is independant and uses the function on the total unfiltered column.
+-- Windows functions allow users to partition instead of using GROUP BY to filters rows ber ColumnName.
+        SELECT ColumnName1, 
+            FUNCTION(ColumnName) 
+                    OVER(    -- The OVER clause creates a window. A window is a subset of rows
+                        PARTITION BY ColumnName    -- The PARTITION BY clause groups rows.
+                        ) AS RenamePartitionCalcColumn  
         FROM TableName tbl1
         JOIN TableName tbl2 ON tbl.ID = tbl2.ID
 
