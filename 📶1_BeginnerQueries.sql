@@ -1,6 +1,7 @@
 /*
 This is a SQL guide for beginner level queries. 
 We will be going over statement structure (the syntax and major clauses) and basic functions for data manipulation.
+
 SOURCES
 Joey Blue - https://www.youtube.com/@joeyblue1/playlists
 Alex the Analyst - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/playlists
