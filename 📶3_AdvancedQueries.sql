@@ -31,4 +31,5 @@ DELETE FROM TableCTE WHERE RowNumber > 1
     WHEN NOT MATCHED BY SOURCE THEN
         DELETE;
 
+https://www.youtube.com/watch?v=UC7uvOqcUTs&list=PLUaB-1hjhk8GjfgvWlreA6BvTvazz8RHG
 https://www.youtube.com/watch?v=C7CPXeEvKN0
