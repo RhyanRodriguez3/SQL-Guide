@@ -9,7 +9,13 @@ We will be going over subqueries, CTEs/Recursive JOINS, handling NULL values, an
     FROM TableName tbl1
     WHERE ISNULL(ColumnName, '') = ''
 
--- To handle dates registered as text datatypes, use Isdate().
+        
+/*  
+To handle dates registered as text datatypes, use Isdate(). Other date functions below.
+    CAST()
+    CONVERT()
+    GETDATE()
+*/
     SELECT ISDATE(ColumnName)
     FROM TableName tbl1
     WHERE ISDATE(DateColumn) = 1 AND 
@@ -18,6 +24,7 @@ We will be going over subqueries, CTEs/Recursive JOINS, handling NULL values, an
                 THEN CAST(NULL AS DateType)
                 ELSE CAST(DateColumn AS DateType)
             END < 'XX/XX/XXXX'
+
         
 -- Subqueries is creating a query and using the results from that query as a substitute for the table. TIP: Instead of multiple OR clauses, use IN clause.
     SELECT TableName.ColumnName
@@ -28,11 +35,13 @@ We will be going over subqueries, CTEs/Recursive JOINS, handling NULL values, an
                         WHERE ColumnName IS NOT NULL
                         )
 
+        
 -- SELF JOIN is when you join a table to itself. Used for hierchical data, when you need to find data connected to other data values within the same table.
     SELECT TableName.ColumnName, TableName2.ColumnName
     FROM TableName tbl1
     INNER JOIN tbl1.IDColumnName = tbl2.IDColumnName
 
+        
 -- Comomon Table Expressions are  JOIN is when you join a table to itself. Used for hierchical data, when you need to find data connected to other data values within the same table.
     WITH cteTable
     AS
