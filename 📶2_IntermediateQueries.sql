@@ -4,28 +4,6 @@ We will be going over subqueries, windows functions, handling NULL values and ho
 For a list of all SQL functions and syntax, refer to the RDBMS documentation. 
 */
 
-
--- Handling NULL or Empty string. NULL is the absence of a value. Empty means the value has a string data type.
-    SELECT TableName.ColumnName
-    FROM TableName tbl1
-    WHERE ISNULL(ColumnName, '') = ''
-
-        
-/*  
-To handle dates registered as text datatypes, use Isdate(). Other date functions below.
-    CAST()
-    CONVERT()
-    GETDATE()
-*/
-    SELECT ISDATE(ColumnName)
-    FROM TableName tbl1
-    WHERE ISDATE(DateColumn) = 1 AND 
-            CASE 
-                WHEN ISDATE(DateColumn) = 1
-                THEN CAST(NULL AS DateType)
-                ELSE CAST(DateColumn AS DateType)
-            END < 'XX/XX/XXXX'
-
         
 -- Subqueries is creating a query and using the results from that query as a substitute for the table. TIP: Instead of multiple OR clauses, use IN clause.
     SELECT TableName.ColumnName
