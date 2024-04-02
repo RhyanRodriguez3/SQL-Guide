@@ -28,6 +28,12 @@ We will be going over statement structure (the syntax and major clauses) and bas
         LIMIT;
 
 
+-- SELF JOIN is when you join a table to itself. Used for hierchical data, when you need to find data connected to other data values within the same table.
+    SELECT TableName.ColumnName, TableName2.ColumnName
+    FROM TableName tbl1
+    INNER JOIN tbl1.IDColumnName = tbl2.IDColumnName
+
+            
 -- Functions are calculations to handle dataset values. For a list of all SQL functions and syntax, refer to the RDBMS' documentation. The ones below are the most commonly used.
         FUNCTIONS
                 SUM(), AVG(), MIN(), MAX(), COUNT(), STDEV() / STDEV_SAMP() / STDEV_POP(), VAR()
