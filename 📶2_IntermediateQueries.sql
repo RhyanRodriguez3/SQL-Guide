@@ -14,12 +14,3 @@ For a list of all SQL functions and syntax, refer to the RDBMS documentation.
                         WHERE ColumnName IS NOT NULL
                         )
 
-
--- Comomon Table Expressions are  JOIN is when you join a table to itself. Used for hierchical data, when you need to find data connected to other data values within the same table.
-    WITH cteTable
-    AS
-    (
-        SELECT TableName.ColumnName, TableName2.ColumnName
-        FROM TableName tbl1
-        INNER JOIN tbl1.IDColumnName = tbl2.IDColumnName
-    )
