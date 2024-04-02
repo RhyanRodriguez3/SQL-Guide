@@ -2,6 +2,10 @@
 This is a SQL guide for intermediate level queries. 
 We will be going over subqueries and common windows functions.
 For a list of all SQL functions and syntax, refer to the RDBMS documentation.
+
+SOURCES
+Alex the Analyst - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/playlists
+Colt Steele - https://www.youtube.com/watch?v=y1KCM8vbYe4
 */
 
         
