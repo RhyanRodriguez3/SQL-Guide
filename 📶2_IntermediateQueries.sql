@@ -1,11 +1,11 @@
 /*
 This is a SQL guide for intermediate level queries. 
-We will be going over subqueries, CTEs/Recursive JOINS, handling NULL values, and windows functions.
+We will be going over subqueries, windows functions, handling NULL values and how to handle other common data problems.
 For a list of all SQL functions and syntax, refer to the RDBMS documentation. 
 */
 
 
--- Handling NULL or Empty string. NULL is the absence of a value. Empty is a string data type.
+-- Handling NULL or Empty string. NULL is the absence of a value. Empty means the value has a string data type.
     SELECT TableName.ColumnName
     FROM TableName tbl1
     WHERE ISNULL(ColumnName, '') = ''
