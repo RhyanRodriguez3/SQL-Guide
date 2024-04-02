@@ -10,3 +10,13 @@ WITH TableCTE AS
     FROM Employees
     )
 DELETE FROM TableCTE WHERE RowNumber > 1 
+
+    
+-- Common Table Expressions are ...
+    WITH cteTable
+    AS
+    (
+        SELECT TableName.ColumnName, TableName2.ColumnName
+        FROM TableName tbl1
+        INNER JOIN tbl1.IDColumnName = tbl2.IDColumnName
+    )
