@@ -44,13 +44,20 @@ We will be going over statement structure (the syntax and major clauses) and bas
         String Functions -- Deals with string/text columns values
             LENGTH(ColumnName), UPPER(), 'L or R'TRIM(), LEFT(), RIGHT()
             CONCAT() /*used to combine column values*/ , FORMAT() /* Used to change the format of the value*/
-            SUBSTRING(), -- This is great 
-            REPLACE() --
-        Aggregate Functions
+            SUBSTRING(), -- This is great for finding values in columns
+            REPLACE() -- To replace string characters in column values
+                
+        Aggregate Functions -- Deals with column value calculations
             SUM(), AVG(), MIN(), MAX(), COUNT(), STDEV() / STDEV_SAMP() / STDEV_POP(), VAR()
             GROUP_CONCAT()
             DISTINCT Removes duplicate records from a column.
 
-
+-- CASE statements are used as IF THEN statements from excel.
+        SELECT ColumnName
+          CASE 
+            WHEN ColumnName YourCondition THEN YourCondition
+            WHEN ColumnName2 YourCondition THEN YourCondition -- You can create multiple when conditions
+          END AS NameCreatedColumn
+        FROM ColumnName;
 
 
