@@ -26,14 +26,12 @@ Structured Query Language (SQL) is used to manipulate data and databases. RDBMS 
 ### 😤📺 Youtube University! Support these channels! 
 
 <!--
-Joey Blue - https://www.youtube.com/@joeyblue1/playlists <br />
+Beginner SQL w/ Joey Blue - https://www.youtube.com/@joeyblue1/playlists <br />
 Intermediate to Advanced SQL w/ Alex the Analyst - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/playlists <br />
-SQL Engine and Interview Q&A - https://www.youtube.com/c/Csharp-video-tutorialsBlogspot/playlists <br />
-Learn how the SQL Server Engine works w/ Brent Ozar - https://www.youtube.com/watch?v=fERXOywBhlA <br />
+How the MS SQL Engine works w/ Brent Ozar - https://www.youtube.com/watch?v=fERXOywBhlA <br />
+BI Interview Q&A - https://www.youtube.com/c/Csharp-video-tutorialsBlogspot/playlists <br />
 Joe Celko
 -->
 
 https://learnsql.com/blog/standard-sql-functions-cheat-sheet/standard-sql-functions-cheat-sheet-a4.pdf
-https://www.youtube.com/watch?v=9Pzj7Aj25lw&list=PLD20298E653A970F8
-
 </details>
