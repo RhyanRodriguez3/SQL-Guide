@@ -5,12 +5,12 @@ For a list of all SQL functions and syntax, refer to the RDBMS documentation.
 */
 
         
--- Subqueries is creating a query and using the results from that query as a substitute for the table. TIP: Instead of multiple OR clauses, use IN clause.
-    SELECT TableName.ColumnName
+-- Subqueries is creating a query to reference another query's results. Can be used to combine data from other tables. 
+    SELECT TableName.ColumnName  -- Subqueries can be used in the select clause to create another column. Usually used for column total functions.
     FROM TableName tbl1
-    WHERE ColumnName IN (
-                        SELECT DISTINCT TableName.ColumnName  -- A query run inside of another query.
-                        FROM TableName tbl1
+    WHERE ColumnName IN ( -- TIP: Instead of multiple OR clauses, use IN clause.
+                        SELECT DISTINCT ColumnName AS 'RenamedColumn' -- The inner query can only have 1 column to retrieve.
+                        FROM TableName2 tbl2
                         WHERE ColumnName IS NOT NULL
                         )
 
