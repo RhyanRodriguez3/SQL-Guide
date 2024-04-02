@@ -1,7 +1,7 @@
 /*
 This is a SQL guide for intermediate level queries. 
 We will be going over subqueries and common windows functions.
-For a list of all SQL functions and syntax, refer to the RDBMS documentation. 
+For a list of all SQL functions and syntax, refer to the RDBMS documentation.
 */
 
         
@@ -46,3 +46,9 @@ For a list of all SQL functions and syntax, refer to the RDBMS documentation.
             RANK() OVER(PARTITION BY ColumnName ORDER BY ColumnName DESC) AS RankColumn
         FROM TableName tbl1
         JOIN TableName tbl2 ON tbl.ID = tbl2.ID
+
+
+/*
+SOURCES 
+https://www.youtube.com/watch?v=y1KCM8vbYe4&t=310s
+*/
