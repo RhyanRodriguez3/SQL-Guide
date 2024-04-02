@@ -15,7 +15,7 @@ Structured Query Language (SQL) is used to manipulate data and databases. RDBMS 
 
 
 <details>
-  <summary>Sources</summary>
+  <summary><ins>SOURCES</ins></summary>
 
 ### 😤📺 Youtube University! Support these channels! 
 
