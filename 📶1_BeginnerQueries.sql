@@ -8,7 +8,7 @@ We will be going over statement structure (the syntax and major clauses) and bas
         SELECT ColumnNames(s) AS RenameColumn(s)
         FROM TableName
         JOIN TableName1 AS RenamedTable ON RenamedTable1.IDColumnName = RenamedTable2.IDColumnName
-        JOIN TableName3 AS RenamedTable3 ON RenamedTable2.IDColumnName = RenamedTable3.IDColumnName -- To JOIN more than one table, simply repeat the statement and connect the ID columns.
+            JOIN TableName3 AS RenamedTable3 ON RenamedTable2.IDColumnName = RenamedTable3.IDColumnName -- To JOIN more than one table, simply repeat the statement and connect the ID columns.
           /*
           JOIN clauses allow you to pull data from multiple tables.
           INNER JOIN only pulls rows from table columns whose ID match, and exclude values that don't.
@@ -40,10 +40,12 @@ We will be going over statement structure (the syntax and major clauses) and bas
     SELECT * FROM TableName2 WHERE YourCondition, 'YourBin' AS BinName;        
 
 
--- Functions are calculations to handle dataset values. For a list of all SQL functions and syntax, refer to the RDBMS' documentation. The ones below are the most commonly used.
+-- Functions are built-in calculations. For a list of all SQL functions and syntax, refer to your RDBMS' documentation. The ones below are the most commonly used.
+        
         String Functions -- Deals with string/text columns values
             LENGTH(ColumnName), UPPER(), 'L or R'TRIM(), LEFT(), RIGHT()
-            CONCAT() /*used to combine column values*/ , FORMAT() /* Used to change the format of the value*/
+            CONCAT() /*used to combine column values*/ , 
+            FORMAT() /* Used to change the format of the value*/
             SUBSTRING(), -- This is great for finding values in columns
             REPLACE() -- To replace string characters in column values
                 
@@ -52,7 +54,7 @@ We will be going over statement structure (the syntax and major clauses) and bas
             GROUP_CONCAT()
             DISTINCT Removes duplicate records from a column.
 
--- CASE statements are used as IF THEN statements from excel.
+-- CASE statements are used like IF statements in excel.
         SELECT ColumnName
           CASE 
             WHEN ColumnName YourCondition THEN YourCondition
