@@ -22,29 +22,17 @@ We will be going over statement structure (the syntax and major clauses) and agg
           Strings/text values are
             '%' wildcard which represents zero or multiple characters, '_' represents a single character*
           */
-        ORDER BY ColumnNameYouWantSorted ON SpecifiedCriteria
-        LIMIT or TOP;
+        GROUP BY ColumnName(s) -- Used to group rows that have the same values into summary rows.
+        ORDER BY ColumnNameYouWantSorted ON SpecifiedCriteria -- Sort the query result.
+        LIMIT / TOP;
 
 
--- Aggregate functions are calculations on data that return a summary row. RDBMS functions very, so simply your RDBMS' aggregate function documentation.
-        SELECT ColumnNames(s) AS RenameColumn(s)
-        FROM TableName
-        JOIN TableName1 AS RenamedTable ON RenamedTable1.IDColumnName = RenamedTable2.IDColumnName
-        WHERE YourCondition
-        GROUP BY 
-SUM(), AVG(), MIN(), MAX(), COUNT(), ()` `STDEV() / STDEV_SAMP() / STDEV_POP()` `VAR()` `COUNT()` `COUNT()`
-GETDATE() Autofill rows for a Date Column.
-GROUP_CONCAT()
-DISTINCT Removes duplicate records from a column.
-
-
--- Handling Date Columns
-        SELECT ColumnNames(s) AS RenameColumn(s)
-        FROM TableName
-        WHERE CAST(DateColumn AS Date) = 'SpecifiedDate'
-
-
-
+-- Functions are calculations to handle dataset values. For a list of all SQL functions and syntax, refer to the RDBMS documentation. The ones below are the most commonly used.
+        FUNCTIONS
+                SUM(), AVG(), MIN(), MAX(), COUNT(), STDEV() / STDEV_SAMP() / STDEV_POP(), VAR()
+                HAVING -- Used to replace the WHERE clause for aggreate functions.
+                GROUP_CONCAT()
+                DISTINCT Removes duplicate records from a column.
 
 
 
