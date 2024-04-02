@@ -34,6 +34,7 @@ We will be going over statement structure (the syntax and major clauses) and bas
     FROM TableName tbl1
     INNER JOIN tbl1.IDColumnName = tbl2.IDColumnName;
 
+
 -- UNION statement appends rows from separate tables with double SELECT statements.
     SELECT * FROM TableName1 WHERE YourCondition, 'YourBin' AS BinName  -- This creates a column with your string value as the entire column's value.
     UNION -- DISTINCT is default or you can use ALL to append it all
