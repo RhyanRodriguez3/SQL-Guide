@@ -14,14 +14,26 @@ For a list of all SQL functions and syntax, refer to the RDBMS documentation.
                         WHERE ColumnName IS NOT NULL
                         )
 
--- Windows functions allow users to partition instead of using GROUP BY to filters rows ber ColumnName.
+-- Create a windows functions useing the OVER() function. Windows functions perform aggregate oprations on groups of rows. This allow users to partition based on row groups, as opposed to GROUP BY, which filters rows per column.
         SELECT ColumnName1, 
-            FUNCTION(ColumnName) 
+            WINDOW FUNCTION(ColumnName) 
                     OVER(    -- The OVER clause creates a window. A window is a subset of rows
-                        PARTITION BY ColumnName    -- The PARTITION BY clause groups rows.
-                        ) AS RenamePartitionCalcColumn  
+                        PARTITION BY ColumnName    -- The PARTITION BY clause specifies the row group you want the function to perform on.
+                        ORDER BY ColumnName  -- You can use the ORDER BY clause to sort rows within each window.
+                        ) AS RenamePartitionCalcColumn   -- This is just another calculated column.
         FROM TableName tbl1
         JOIN TableName tbl2 ON tbl.ID = tbl2.ID
+
+            
+-- There are some function which can only be used with window function(s). Refer to your RDBMS documentation for a full list. Common ones below:
+        LAG() -- Retrieve / use the previous row within the partition
+        LEAD() -- 
+        RANK() -- Rank of row value within the partition. When there are duplicate values, it skips over them.
+        DENSE_RANK()
+        PERCENT_RANK
+        ROW_NUMBER()
+        LAST_VALUE()
+        CUME_DIST()
 
 -- Rolling total is a windows functions that adds values from previous rows.
         SELECT ColumnName1, FUNCTION(ColumnName) OVER(PARTITION BY ColumnName ORDER BY ColumnName) AS RollingTotalColumn
@@ -29,8 +41,8 @@ For a list of all SQL functions and syntax, refer to the RDBMS documentation.
         JOIN TableName tbl2 ON tbl.ID = tbl2.ID
             
 -- Row_Num is a windows functions that indexes/assigns unique IDs to every row.
-        SELECT ColumnName1
-        ROW_NUMBER() OVER(PARTITION BY ColumnName ORDER BY ColumnName DESC) AS RowNumColumn
-        RANK() OVER(PARTITION BY ColumnName ORDER BY ColumnName DESC) AS RankColumn
+        SELECT ColumnName1,
+            ROW_NUMBER() OVER(PARTITION BY ColumnName ORDER BY ColumnName DESC) AS RowNumColumn
+            RANK() OVER(PARTITION BY ColumnName ORDER BY ColumnName DESC) AS RankColumn
         FROM TableName tbl1
         JOIN TableName tbl2 ON tbl.ID = tbl2.ID
