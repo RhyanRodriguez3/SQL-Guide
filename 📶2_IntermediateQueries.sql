@@ -1,6 +1,7 @@
 /*
 This is a SQL guide for intermediate level queries. 
 We will be going over subqueries, CTEs/Recursive JOINS, handling NULL values, and windows functions.
+For a list of all SQL functions and syntax, refer to the RDBMS documentation. 
 */
 
 
