@@ -1,5 +1,23 @@
 /*
 How to create tables and use basic DDL, DML, and DCL.
+DDL
+DML
+DCL Database Control Language (DCL)
+  - GRANT: Give privileges to database users.
+  - REVOKE: Take back privileges from database users.
+Transaction Control Language (TCL):
+- COMMIT: Save changes made during the current transaction.
+- ROLLBACK: Undo changes made during the current transaction.
+- SAVEPOINT: Set a point within a transaction to which you can later roll back.
+5. Schema Manipulation Language (SML):
+- CREATE SCHEMA: Create a new schema.
+- ALTER SCHEMA: Modify an existing schema.
+- DROP SCHEMA: Delete a schema from the database.
+Other Commands:
+- USE: Select a particular database.
+- SHOW: Display information about the database.
+- DESCRIBE: Show the structure of a table.
+- SET: Set or change settings of the SQL environment.
 */
 
 <details>
@@ -18,26 +36,4 @@ How to create tables and use basic DDL, DML, and DCL.
 - TRUNCATE TABLE: Removes all records from a table in a database, but keeps the table and structure in place.
 </details>
 
-<details>
-  <summary>Other</summary>
-## 3. Database Control Language (DCL)
-- GRANT: Give privileges to database users.
-- REVOKE: Take back privileges from database users.
-
-## 4. Transaction Control Language (TCL):
-- COMMIT: Save changes made during the current transaction.
-- ROLLBACK: Undo changes made during the current transaction.
-- SAVEPOINT: Set a point within a transaction to which you can later roll back.
-
-## 5. Schema Manipulation Language (SML):
-- CREATE SCHEMA: Create a new schema.
-- ALTER SCHEMA: Modify an existing schema.
-- DROP SCHEMA: Delete a schema from the database.
-
-## 7. Other Commands:
-- USE: Select a particular database.
-- SHOW: Display information about the database.
-- DESCRIBE: Show the structure of a table.
-- SET: Set or change settings of the SQL environment.
-
-</details>
+-- Views get saved in the database nd can be available to other queries and stored procediures. Howeve, if this view is only used at this one place it can be elimiated with other options like CTE, Derived Tables, Temp Tables, Table variables,
