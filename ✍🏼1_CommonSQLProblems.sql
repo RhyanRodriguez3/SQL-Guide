@@ -110,11 +110,31 @@ The SQL used is MS SQL Server.
     SELECT * FROM tble1 WHERE Column1 LEFT(Column1, 1) = 'M' -- Results in columns where the 1st letter starts with M
     SELECT * FROM tble1 WHERE Column1 SUBSTRING(Colum1, 1, 1) = 'M'
 
+-- To seperate numbers and strings. Create a User Defined Function (UDF). https://www.youtube.com/watch?v=dcRVNM0yv9o&list=PL6n9fhu94yhXcztdLO7i6mdyaegC8CJwR&index=20
+    CREATE FUNCTION YourUDFName
+    (
+    @INPUT VARCHAR(amnt)
+    )
+    RETURNS VARCHAR(amnt)
+    AS
+    BEGIN
+        DECLARE @AlphabetIndex INT = PATINDEX('%[0-9]%', @INPUT)
+        BEGIN
+            WHILE @AlphabetIndex > 0
+            BEGIN
+                SET @INPUT = STUFF(@INPUT, @AlphabetIndex, -1, '')
+                SET @INPUT = PATINDEX('%[0-9]%', @INPUT)
+            END
+        END
+        RETURN ISNULL(@INPUT, 0)
+    END
+        
+
 
 -- Handling date realted questions
     CAST(DateColumn AS DATE) AS YourColumn -- Used to convert a date column to a date type
     YEAR(DateColumn), MONTH(DateColumn), DAY(DateColumn) -- Parses the date by month, day, and year.
-    GETDATE() 
+    GETDATE() -- Generates todays date
     CAST(DateColumn AS DATE) AS YourColumn -- Used to convert a date column to a date type
 
         
