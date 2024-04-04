@@ -4,6 +4,34 @@ The SQL used is MS SQL Server.
 */
 
 
+-- How to find nulls or other useless values in data. NULL is the absence of a value. Empty means the value has a string data type. 
+    SELECT *
+    FROM TableName tbl1
+    WHERE ColumnName IS NULL OR ColumnName = ''  -- I'd repeat this for all columns. Still looking if this is the only way to do this.
+
+        
+-- How to handle replacing NULLs and empty strings.
+    SELECT ColumnName,
+        ISNULL(ColumnName, 'YourValue') AS YourColumn, -- ISNULL function only works on one expression while the COALESCE function works on multiple.
+        COALESCE(ColumnName1, ColumnName2, ColumnName3, 'YourValue') AS YourColumn
+    FROM TableName tbl1
+
+        
+-- To remove duplicate values, create a window function (usually ROW_NUM or DENSE_RANK) and partition the ID column. Use a CTE because you don't want to delete the db rows.
+    WITH cteName AS
+        (
+         Select *, ROW_NUMBER() OVER(PARTITION BY IDColumn ORDER BY IDColumn) AS YourColumnName -- Creates calccolumn that assigns sequential numbers to rank or number the ID column.
+         From Tble1 
+        )
+    DELETE FROM cteName WHERE RowNumColumn > 1 -- This deletes all rows whose IDs repeat. To delete duplicates means the ID columns are the same.
+
+    -- To find duplicate records
+    SELECT IDColumn, COUNT(*)
+    FROM Tble1
+    GROUP BY IDColumn
+    HAVING COUNT(*) > 1;
+
+        
 -- How to find the nth highest value. This example showcases multiple solutions to get the same results.
     SELECT DISTINCT MAX(ColumnName) FROM TableName tbl1 ORDER BY ColumnName DESC; -- I would first try to find a unique list of all values.
 
@@ -50,21 +78,7 @@ The SQL used is MS SQL Server.
     ON E1.ManagerID = E2.EmployeeId
 
 
--- Handling NULL or Empty string. NULL is the absence of a value. Empty means the value has a string data type. This query finds all null values and replaces it with an empty string.
-    SELECT TableName.ColumnName
-    FROM TableName tbl1
-    WHERE ISNULL(ColumnName, '') = ''
-
--- To remove duplicate values, created a window function (usually ROW_NUM or DENSE_RANK) and partition the ID row group. 
-    WITH cteName AS
-        (
-         Select *, ROW_NUMBER() OVER(PARTITION BY ColumnName ORDER BY ColumnName) AS RowNumColumn -- Creates result column that assigns sequential numbers to rank or number the ID column.
-         From Tble1
-         Where 
-        )
-    DELETE FROM cteName WHERE RowNumColumn > 1 -- This deletes all rows whose IDs repeat. To delete duplicates means the ID columns are the same.
-
--- To find employees fired in the last month. https://www.youtube.com/watch?v=mnJze9kTGYU&list=PL6n9fhu94yhXcztdLO7i6mdyaegC8CJwR&index=5
+-- To find employees fired in the last month. 
     
 /*  
 To handle dates registered as text datatypes, use Isdate(). Other date functions below.
