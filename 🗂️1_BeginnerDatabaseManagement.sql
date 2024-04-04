@@ -10,4 +10,6 @@ Staging tables are temporary tables used to hold data extracted from source syst
 
 Star schema consists of one or more fact tables referencing any number of dimension tables. Snowflake schema is a variation of the star schema where dimensions are normalized into multiple related tables.
 Fact tables contain measurable and quantitative data about a business process, while dimension tables contain descriptive information related to the data in the fact table.
+
+Reimbursement project
 */
