@@ -110,6 +110,7 @@ The SQL used is MS SQL Server.
     SELECT * FROM tble1 WHERE Column1 LEFT(Column1, 1) = 'M' -- Results in columns where the 1st letter starts with M
     SELECT * FROM tble1 WHERE Column1 SUBSTRING(Colum1, 1, 1) = 'M'
 
+
 -- To seperate numbers and strings. Create a User Defined Function (UDF). https://www.youtube.com/watch?v=dcRVNM0yv9o&list=PL6n9fhu94yhXcztdLO7i6mdyaegC8CJwR&index=20
     CREATE FUNCTION YourUDFName
     (
@@ -131,12 +132,22 @@ The SQL used is MS SQL Server.
         
 
 
--- Handling date realted questions
+-- Handling date related questions
     CAST(DateColumn AS DATE) AS YourColumn -- Used to convert a date column to a date type
     YEAR(DateColumn), MONTH(DateColumn), DAY(DateColumn) -- Parses the date by month, day, and year.
     GETDATE() -- Generates todays date
     CAST(DateColumn AS DATE) AS YourColumn -- Used to convert a date column to a date type
 
+
+-- To turn month columns into quarters. https://www.youtube.com/watch?v=Xe0bVqjqRGE
+    SELECT 
+        YEAR(DateColumn) AS YearColumn
+        ,MONTH(DateColumn) AS MonthColumn
+        ,DAY(DateColumn) AS DayColumn,
+        ,DATEPART(QUARTER, DateColumn) AS QtrColumn
+    FROM tble1
+    GROUP BY YearColumn, MonthColumn, DayColumn, QtrColumn
+    ORDER BY DateColumn DESC
         
 /*  
 To handle dates registered as text datatypes, use Isdate(). Other date functions below.
