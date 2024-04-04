@@ -12,6 +12,7 @@ Star schema consists of one or more fact tables referencing any number of dimens
 Fact tables contain measurable and quantitative data about a business process, while dimension tables contain descriptive information related to the data in the fact table.
 */
 
+BEHAVIORAL QUESTIONS
 /*
 BI Engineer Interview Prep
 Understand the ETL process and have three stories that show each skill and your impact. 
@@ -24,4 +25,17 @@ You want to be prepared with past experience where you've applied the concepts.
 - I enjoy data cleansing and documentation but it can be daunting with multiple tasks.
 - One time I was in 2 projects that had compeltely different data requirements and data types.
 Know enough beginner and intermediate SQL coding to clean and analyze data. Then show findings and possible business steps based on results.
+*/
+
+TOOL DOCUMENTATION
+/*
+a.	Oracle Analytics Service and Tableau
+i.	Tableau Walkthroughs - https://www.youtube.com/watch?v=TPMlZxRRaBQ&pp=ygUTVGFibGVhdSB3YWxrdGhyb3VnaA%3D%3D
+ii.	Oracle Analytics RPD
+iii.	PeopleSoft Financials, HCM,
+
+b.	AWS ETL (Andre Brown w/ FreeCodeCamp)
+i.	AWS Glue is…
+ https://www.youtube.com/watch?v=dQnRP6X8QAU
+ii.	Snowflake https://www.youtube.com/watch?v=xCCkHZf1-aI
 */
