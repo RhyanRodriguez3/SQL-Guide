@@ -78,8 +78,46 @@ The SQL used is MS SQL Server.
     ON E1.ManagerID = E2.EmployeeId
 
 
--- To find employees fired in the last month. 
-    
+-- To find employees fired in the last month. Replace the YEAR function with your date time frame. GETDATE results in todays date.
+    Select *, DATEDIFF(YEAR, DateColumn, GETDATE()) AS YourDateColumn
+    From Tble1
+    Where DATEDIFF(YEAR, DateColumn, GETDATE()) BETWEEN 1 and 30
+    ORDER BY DateColumn DESC
+
+
+-- To transform rows into columns (transpose) use PIVOT queries.
+    SELECT ColumnValue1, ColumnValue2 -- Use a select statement to create the structure and name the columns as the values of the rows you want transposed
+    (
+        Select Column1, Column2
+          'Column2Value' + CAST(ROW_NUMBER() OVER(PARTITION BY Column1 ORDER BY Column1)) AS DataType(amnt) AS YourColumn
+        FROM tble1
+    ) Temp
+    PIVOT
+    (
+        MAX(City)
+        FOR YourColumnName IN (ColumnsYouWantTransposed)
+    )
+
+-- To analyze the dataset. Major aggregate functions and windows functions perform operations on specific columns.
+    SELECT Column1, FUNCTION(*) AS YourColumn
+    FROM tble1
+    JOIN tble2 ON tble2.IDColumn = tble1.IDColumn
+    GROUP BY Column1 DESC
+
+
+-- To manipulate string values using LIKE, CHARINDEX, LEFT, RIGHT, SUBSTRING.
+    SELECT * FROM tble1 WHERE Column1 LIKE 'M%' -- Results in all columns that begin with M
+    SELECT * FROM tble1 WHERE Column1 LEFT(Column1, 1) = 'M' -- Results in columns where the 1st letter starts with M
+    SELECT * FROM tble1 WHERE Column1 SUBSTRING(Colum1, 1, 1) = 'M'
+
+
+-- Handling date realted questions
+    CAST(DateColumn AS DATE) AS YourColumn -- Used to convert a date column to a date type
+    YEAR(DateColumn), MONTH(DateColumn), DAY(DateColumn) -- Parses the date by month, day, and year.
+    GETDATE() 
+    CAST(DateColumn AS DATE) AS YourColumn -- Used to convert a date column to a date type
+
+        
 /*  
 To handle dates registered as text datatypes, use Isdate(). Other date functions below.
     CAST()
