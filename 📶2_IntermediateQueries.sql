@@ -18,7 +18,7 @@ Colt Steele - https://www.youtube.com/watch?v=y1KCM8vbYe4&t=310s
                         WHERE ColumnName IS NOT NULL
                         )
 
--- Create a windows functions useing the OVER() function. Windows functions perform aggregate oprations on groups of rows. This allow users to partition based on row groups, as opposed to GROUP BY, which filters rows per column.
+-- Create a windows functions useing the OVER() function. Windows functions perform aggregate operations on groups of rows. This allow users to partition based on row groups, as opposed to GROUP BY, which filters rows per column.
         SELECT ColumnName1, 
             WINDOW FUNCTION(ColumnName) 
                     OVER(    -- The OVER clause creates a window. A window is a subset of rows
