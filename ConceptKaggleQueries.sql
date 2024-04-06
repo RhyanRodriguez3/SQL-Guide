@@ -1,5 +1,14 @@
 -- Data sourced from RGRIFFIN Kaggle dataset "120 years of Olympic history: athletes and results"
+🪜 Cor
+Secret To Optimizing SQL Queries - Understand The SQL Execution Order - https://www.youtube.com/watch?v=BHwzDmr6d7s
 
+Table 1 could possibly have duplicates Write a query to read unique records from Table 1.
+Display average GPA by college and academic year
+Display the top 3 students within each college
+Write a python query to read csv and pandas. 
+Look up temp tables
+stored procedures
+EdX data science course
 -- View csv files in excel. Reuse this code to create tables.   
 DROP TABLE IF EXISTS TableName1;
 CREATE TABLE IF NOT EXISTS TableName1 
