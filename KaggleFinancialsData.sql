@@ -1,11 +1,58 @@
 /*
-This is a no-bs project to get me ready using SQL to query and manipulate databases.
-Download SSMS or use web browser SQL lite: https://sqliteonline.com/syntax/all_functions
-Dataset #1: https://www.kaggle.com/datasets/atharvaarya25/financials/data
-https://www.youtube.com/watch?v=EKOWoInn46A
+Project: ETL raw data and use SQL to analyze. 
+Use web browser SQL lite (https://sqliteonline.com/syntax/all_functions)
+Dataset: https://www.kaggle.com/datasets/atharvaarya25/financials/data
 */
 
--- Download the data as a CSV file and save it online.
+/* =================================================================
+STEP 1: Download the data as a CSV file then import into SQL server. 
+    LESSON: Get comfortable being unsure of the data and guessing if what your doing is wrong. Write your questions down and logically problem solve.
+==================================================================== */
+
+/* ======================================================================
+STEP 2: Create a table and import the csv dataset values into SQL server.
+    LESSON #1: Troubleshoot the import. Test whether I can convert the data types and conduct regular EDA as usual or if I have to correct the import.
+    LESSON #2: Count total rows and define columns to identify the useless/excess data.
+========================================================================= */
+
+-- There main data types are numeric, string, and date.  
+CREATE TABLE YourTableName 
+(
+  Segment TEXT 
+  ,Country TEXT
+  ,Product VARCHAR(100)
+  ,UnitsSold INT
+  ,Sales INT
+  ,DateColumn DATE -- You can parse and manipulate the date column.
+);
+
+-- To update the data type of a column.
+ALTER TABLE YourTableName 
+ALTER COLUMN ColumnName NVARCHAR(200) NOT NULL
+
+-- Count total table rows. Manually count the columns, REFER TO DOCUMENTATION.
+SELECT COUNT(*) 
+FROM YourTable;
+
+-- Identify what data type the SQL engine has for each column. REFER TO DOCUMENTATION.
+SELECT name, sql 
+FROM sqlite_master
+WHERE type='table'
+ORDER BY name;
+
+-- Find nulls or '' then replace values.
+SELECT * 
+from YourTable
+WHERE YourColumn(s) is NULL OR '';
+
+SELECT ISNULL(column_name,'Value if Null') -- This works for single columns
+SELECT COALESCE(column_name(s),'Value if Null') -- This works for multiple columns
+
+-- Find duplicates and delete them. 
+SELECT IDColumn, COUNT(IDColumn)
+FROM YourTable
+GROUP BY IDColumn
+HAVING COUNT(IDColumn) > 1 
 
 Table 1 could possibly have duplicates Write a query to read unique records from Table 1.
 Display average GPA by college and academic year
