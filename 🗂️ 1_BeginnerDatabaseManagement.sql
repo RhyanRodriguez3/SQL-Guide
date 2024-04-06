@@ -3,6 +3,7 @@ There are many RDBMS, but this is how the DB engine works.
 a.	BONUS Database Mgmt: 
 i.	How to install and configure and security? Metadata resources? Schedule tasks? Disaster recovery? What are bug fixes? code deployment? 
 SQL query optimization involves using indexes, avoiding unnecessary columns or rows in the SELECT statement, optimizing WHERE clauses, and using appropriate JOIN types.
+Secret To Optimizing SQL Queries - Understand The SQL Execution Order - https://www.youtube.com/watch?v=BHwzDmr6d7s
 
 OLAP(data warehouse) vs OLTP(db)
 Dimensional modeling focuses on designing data models for analytical purposes, emphasizing easy querying and reporting. Relational modeling, on the other hand, is typically used for transactional databases.
