@@ -14,4 +14,9 @@ Star schema consists of one or more fact tables referencing any number of dimens
 Fact tables contain measurable and quantitative data about a business process, while dimension tables contain descriptive information related to the data in the fact table.
 */
 
+-- Identify what data type the SQL engine has for each column. REFER TO DOCUMENTATION.
+SELECT name, sql 
+FROM sqlite_master
+WHERE type='table'
+ORDER BY name;
 
