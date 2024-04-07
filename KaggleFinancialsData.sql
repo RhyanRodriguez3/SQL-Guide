@@ -1,5 +1,5 @@
 /*
-Project: ETL raw data and use SQL to analyze. 
+Project: Learn how to import and clean raw data with SQL and analyze data with SQL. 
 Use web browser SQL lite (https://sqliteonline.com/syntax/all_functions)
 Dataset: https://www.kaggle.com/datasets/atharvaarya25/financials/data
 */
@@ -16,9 +16,10 @@ STEP 2: Create a table and import the csv dataset values into SQL server.
 ========================================================================= */
 
 -- There main data types are numeric, string, and date.  
+DROP TABLE IF EXISTS YourTableName;
 CREATE TABLE YourTableName 
 (
-  Segment TEXT 
+  Segment TEXT -- Get comfortable not knowing that a column name means, and make assumptions.
   ,Country TEXT
   ,Product VARCHAR(100)
   ,UnitsSold INT
@@ -26,19 +27,13 @@ CREATE TABLE YourTableName
   ,DateColumn DATE -- You can parse and manipulate the date column.
 );
 
--- To update the data type of a column.
-ALTER TABLE YourTableName 
-ALTER COLUMN ColumnName NVARCHAR(200) NOT NULL
+-- To update the data type of a column and rename a column.
+ALTER TABLE YourTableName ALTER COLUMN ColumnName NVARCHAR(200) NOT NULL
+ALTER TABLE YourTableName RENAME COLUMN ColumnName TO YourRenamedColumnName
 
 -- Count total table rows. Manually count the columns, REFER TO DOCUMENTATION.
 SELECT COUNT(*) 
 FROM YourTable;
-
--- Identify what data type the SQL engine has for each column. REFER TO DOCUMENTATION.
-SELECT name, sql 
-FROM sqlite_master
-WHERE type='table'
-ORDER BY name;
 
 -- Find nulls or '' then replace values.
 SELECT * 
