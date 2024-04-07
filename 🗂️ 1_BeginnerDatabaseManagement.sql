@@ -1,9 +1,24 @@
+
+/* ====================================
+   Understand the SQL execution order. 
+   ==================================== */
+
+SELECT      --> Step #6: Then it finds the columns you input.
+FROM             --> Step #1: The engine finds which tables you are pulling from. 
+JOIN ON         --> Step #2: Then joins those tables based on the IDColumns. TIP: This has the greatest impact on query performance!
+WHERE          --> Step #3: Then it filters the table based on your conditions. Avoid having the engine look through each row, so avoid using functions or calculation here and specify values when possible so the engine can locate it in its index.
+GROUP BY      --> Step #4: Then it groups rows.
+HAVING    --> Step #5: Then it filters the grouped rows based on your condition.
+ORDER BY  --> Step #7: Consider using a smaller result set to further optimize this step. Avoid sorting large datasets.
+LIMIT     --> Step #8
+
+"Each SQL engine has a query optimization plan that defines how it processes queries. It contains index, memory, and algorithms. WIP"
 /*
 There are many RDBMS, but this is how the DB engine works.
 a.	BONUS Database Mgmt: 
 i.	How to install and configure and security? Metadata resources? Schedule tasks? Disaster recovery? What are bug fixes? code deployment? 
 SQL query optimization involves using indexes, avoiding unnecessary columns or rows in the SELECT statement, optimizing WHERE clauses, and using appropriate JOIN types.
-Secret To Optimizing SQL Queries - Understand The SQL Execution Order - https://www.youtube.com/watch?v=BHwzDmr6d7s
+
 
 OLAP(data warehouse) vs OLTP(db)
 Dimensional modeling focuses on designing data models for analytical purposes, emphasizing easy querying and reporting. Relational modeling, on the other hand, is typically used for transactional databases.
@@ -19,4 +34,19 @@ SELECT name, sql
 FROM sqlite_master
 WHERE type='table'
 ORDER BY name;
+
+
+<details>
+  <summary><ins>SOURCES</ins></summary>
+
+### 😤📺 Youtube University! Support these channels! 
+
+> https://www.youtube.com/@ByteByteGo -->Roadmap for Learning SQL
+> 
+> 
+> 
+> 
+> 
+  
+</details>
 
