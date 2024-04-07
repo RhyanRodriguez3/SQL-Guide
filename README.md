@@ -4,7 +4,7 @@ Structured Query Language (SQL) is used to manipulate data and databases. RDBMS 
 ---
 
 ### 📶Manipulate Data with DQL
-> Each file contains queries from beginner to advanced.
+> Files contain queries from beginner to advanced. Intended for user to understand syntax concepts.
 
 
 
@@ -14,7 +14,7 @@ Structured Query Language (SQL) is used to manipulate data and databases. RDBMS 
 
 
 ### ✍🏼Practice Tutorials
-> Now that you understand the concepts and fundamentals, these files are for personal learning projects. Learn one step at a time.
+> Apply the fundamentals into personal projects. Learn one step at a time.
 >
 > "We talkin bout, PRACTICE"🗦🐐3️⃣⁉️
 
