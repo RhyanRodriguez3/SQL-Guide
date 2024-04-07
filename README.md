@@ -16,6 +16,8 @@ Structured Query Language (SQL) is used to manipulate data and databases. RDBMS 
 ### ✍🏼Practice Tutorials
 > Apply the fundamentals into personal projects. Learn one step at a time.
 >
+> - Be comfortable with problem solving. Be aware of the overwhelming problem and pressure of "doing it right," then document each step along the way.
+> - 
 > "We talkin bout, PRACTICE"🗦🐐3️⃣⁉️
 
 <br>
