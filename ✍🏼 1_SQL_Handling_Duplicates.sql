@@ -2,8 +2,8 @@
 Guide on how to handle duplicates in a data set with SQL.
 
 There are two types of duplicates. 
-#1 - Duplicates where row values are the same based on COLUMNS. 
-#2 - Duplicates where ALL ROWS are the exact same in the table, including the ID column.
+#1 - Duplicates where row values are the same based on COLUMNS. To solve, create a unique ID column based on grouped values. REFER TO SOLUTIONS 1, 3, and 4.
+#2 - Duplicates where ALL ROWS are the exact same in the table, including the ID column. To solve, use DISTINCT. REFER TO SOLUTIONS 2.
 ========================================================= */
 
 -- Sample Data
@@ -37,7 +37,7 @@ WHERE id IN (
 	     SELECT model, brand, COUNT(*) AS CountOfID    -- Aggregate function used to count each row.
 	     FROM cars	
 	     GROUP BY model, brand    -- Step #1: Define the duplicate values in the columns, then group them.
-	     HAVING COUNT(*) > 1
+	     HAVING COUNT(*) > 1    -- This part counts all the grouped table rows.
 	     ORDER BY CountOfID
 	    ); 
 
@@ -74,84 +74,87 @@ WHERE id not in ( SELECT MIN(id) AS MinID    -- Step #2: This part used the MIN 
 
 
 --> SOLUTION 5: Create a backup table, drop the original table, then rename the backup as the original. 
----------------------------------------------------------------------------------------------------------
-DROP TABLE if exists cars_bkp;    --Deleting the entire table is faster than using the DELETE statement. Only meant for dev environment.
-CREATE TABLE cars_bkp -- [CREATE TABLE IF NOT EXISTS] is not allowed in SSMS. This part creates a backup table. LOOK UP HOW TO MAKE A BACKUP TABLE USING SSMS.
-as
-SELECT * FROM cars where 1=2;    -- Step #1: This returns 0 records since 1=2 is not true. This part is supposed to be a shortcut to create the original table and keep the structure without copying the CREATE TABLE statement.
+-------------------------------------------------------------------------------------------------------
+-- Deleting the entire table is faster than using the DELETE statement. Only meant for a dev/testing environment.
+DROP TABLE IF EXISTS cars_bkp;    
 
-insert into cars_bkp    -- Step #2: This part creates a result set of unique rows. Refer to solution #4.
-select * from cars
-where id in ( select min(id)
-              from cars
-              group by model, brand);
+-- [CREATE TABLE IF NOT EXISTS] is not allowed in SSMS. This part creates a backup table. LOOK UP HOW TO MAKE A BACKUP TABLE USING SSMS.
+CREATE TABLE cars_bkp
+AS				-- ERROR. REFER TO DOCUMENTATION.
+SELECT * FROM cars WHERE 1=2;    -- Step #1: This returns 0 records since 1=2 is false. Thisp part imports the original table values instead of copying the CREATE TABLE statement.
 
-drop table cars;
-alter table cars_bkp rename to cars;   -- How to rename columns in SSMS.
+INSERT INTO cars_bkp    
+SELECT * FROM cars
+WHERE id IN ( SELECT MIN(id)    -- -- Step #2: This part creates a result set of unique rows. Refer to SOLUTION 4.
+              FROM cars
+              GROUP BY model, brand);
 
+DROP TABLE cars;
+ALTER TABLE cars_bkp RENAME to cars;   --  LOOK UP HOW TO RENAME COLUMNS IN SSMS. After deleting the orginal table, this part renames the backup table as the original.
 
 
 --> SOLUTION 6: Using backup table without dropping the original table.
 --------------------------------------------------------------------------
-drop table if exists cars_bkp;
-create table cars_bkp
-as
-select * from cars where 1=0;    -- LOOK UP HOW TO MAKE A BACKUP TABLE USING SSMS.
+DROP TABLE IF EXISTS cars_bkp;
+CREATE TABLE cars_bkp
+AS
+SELECT * FROM cars WHERE 1=2; 
 
-insert into cars_bkp
-select * from cars
-where id in ( select min(id)
-              from cars
-              group by model, brand);
+INSERT INTO cars_bkp    
+SELECT * FROM cars
+WHERE id IN ( SELECT MIN(id)   
+              FROM cars
+              GROUP BY model, brand);
 
 TRUNCATE TABLE cars;    -- TRUNCATE TABLE allows you to delete all the rows in the table but does not delete the table itself.
 
-insert into cars
-select * from cars_bkp;
+INSERT INTO cars
+SELECT * FROM cars_bkp;    -- This part allows you to insert all values from the backup table into the original table.
 
-drop table cars_bkp;
+DROP TABLE cars_bkp;
 
 
 
-/* ==============================================================================================
-   <<<<>>>> Scenario 2: Data duplicated based on ALL column values (including ID column) <<<<>>>>
-   ============================================================================================== */
-"The previous solutions will not work in this scenario because if you try to delete the data based on the ID column, you will delete the entire row"
+/* ========================
+Duplicate Type #2 Solutions
+========================= */
+"The previous solutions will not work in this scenario because if you try to delete the data based on the ID column, you will delete the entire row."
 
---> SOLUTION 1: Delete using CTID. A CTID is a psudo column that the RDBMS internally creates with every record. CTID only works in Postgres SQL! Oracle calls it RowID. 
 
+--> SOLUTION 1: Delete using CTID. A CTID is a pseudo column that the RDBMS internally creates with every record. 
+-----------------------------------------------------------------------------------------------------------------
 SELECT * FROM cars ORDER BY id;
 
 DELETE FROM cars	
 WHERE ctid IN ( 
-			SELECT MAX(ctid) AS CountOfCTID    -- ERROR: Invalid column name 'ctid' WILL NEED TO RESEARCH WHAT SSMS USES AS 'CTID'
-			FROM cars	
-			GROUP BY model, brand   
-			HAVING COUNT(*) > 1    -- This part still remains the same because the function still counts all the table records, but the MAX function operates on the 
-			ORDER BY CountOfCTID
-			);
+		SELECT MAX(ctid) AS CountOfCTID    -- SSMS does not have CTID. CTID only works in Postgres SQL! Oracle calls it RowID.
+		FROM cars	
+		GROUP BY model, brand   
+		HAVING COUNT(*) > 1    
+		ORDER BY CountOfCTID
+	       );
 			
 
---> SOLUTION 2: Create a temporary unique id column. This solution works in ANY RDBMS. Syntax may differ based on RDBMS. Same concept as CTID but you use row_number to create it.
---------------------------------------------------------------------------------------
+--> SOLUTION 2: Create a temporary unique id column. This solution works in ANY RDBMS. Same concept as CTID but you use row_number instead.
+-------------------------------------------------------------------------------------------------------------------------------------------
 ALTER TABLE cars 
 	ADD row_num Int IDENTITY(1,1) NOT NULL    -- Step #1: This part creates an ID column that counts each row.
 
 DELETE FROM cars	
 WHERE row_num IN ( 
-			SELECT MAX(row_num) AS CountOfRow_Num    -- Step #2: REFER TO SOLUTION #1 & #1 from scenario 2. The MAX function selects the highest values of your new ID row_num.
-			FROM cars	
-			GROUP BY model, brand   
-			HAVING COUNT(*) > 1    -- This function counts each aggregate.
-			ORDER BY CountOfRow_Num
-			);
+		  SELECT MAX(row_num) AS CountOfRow_Num    -- Step #2: REFER TO SOLUTION #1 for syntax. The MAX function selects the highest values of your new ID row_num.
+		  FROM cars	
+		  GROUP BY model, brand   
+		  HAVING COUNT(*) > 1   
+		  ORDER BY CountOfRow_Num
+		 );
 
 ALTER TABLE cars 
 	DROP COLUMN row_num;
 
 
 --> SOLUTION 3: Create a backup table and use distinct.
--------------------------------------
+-------------------------------------------------------
 SELECT * INTO cars_bkp FROM cars;    -- STEP #1: This creates a back up table by importing all data from the original table. table from 
 
 SELECT DISTINCT * FROM cars_bkp;    -- STEP #2: Since the table has every row duplicated, a DISTINCT clause will remove duplicates.
