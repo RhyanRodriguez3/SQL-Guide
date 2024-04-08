@@ -27,7 +27,7 @@ Alex the Analyst - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/play
           String/text values are:
             '%' wildcard which represents zero or multiple characters, '_' represents a single character*
           */
-        GROUP BY ColumnName(s) -- Used to group rows that have the same values into summary rows. Often followed by a function.
+        GROUP BY ColumnName(s) -- The GROUP BY clause groups rows that have the same values into summary rows. Often followed by a function.
         HAVING FUNCTION(ColumnName) -- The HAVING clause replaces the WHERE clause when you need to specify a function as a condition.
         ORDER BY ColumnNameYouWantSorted ON SpecifiedCriteria -- Sort the query result.
         LIMIT;
@@ -54,7 +54,7 @@ Alex the Analyst - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/play
             SUBSTRING(), -- This is great for finding values in columns
             REPLACE() -- To replace string characters in column values
                 
-        Aggregate Functions -- Deals with column value calculations
+        Aggregate Functions -- Deals with column value calculations 
             SUM(), AVG(), MIN(), MAX(), COUNT(), STDEV() / STDEV_SAMP() / STDEV_POP(), VAR()
             GROUP_CONCAT()
             DISTINCT Removes duplicate records from a column.
