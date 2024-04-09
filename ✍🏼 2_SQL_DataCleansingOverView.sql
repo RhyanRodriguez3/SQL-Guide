@@ -2,7 +2,9 @@
 This is a repo of commonly asked Business Interview Q&A as well as codes for reuse.
 The SQL used is MS SQL Server.
 
+SOURCE
 https://www.youtube.com/watch?v=8rO7ztF4NtU&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f&index=3
+https://www.analystbuilder.com/courses/mysql-for-data-analytics
 */
 
 /* =================================================================================================================================
