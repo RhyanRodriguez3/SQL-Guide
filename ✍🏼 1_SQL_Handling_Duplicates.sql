@@ -73,6 +73,13 @@ WHERE id not in ( SELECT MIN(id) AS MinID    -- Step #2: This part used the MIN 
 		);
 
 
+--> mySOLUTION: If the idea is to create a unique column, then .
+----------------------------------------------------------------------------
+SELECT model, brand, CONCAT(model, brand) AS Car_Info, COUNT(Car_Info)
+FROM cars
+GROUP BY model, brand
+WHERE 
+
 --> SOLUTION 5: Create a backup table, drop the original table, then rename the backup as the original. 
 -------------------------------------------------------------------------------------------------------
 -- Deleting the entire table is faster than using the DELETE statement. Only meant for a dev/testing environment.
