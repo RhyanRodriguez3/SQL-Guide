@@ -4,6 +4,9 @@ Guide on how to handle duplicates in a data set with SQL.
 There are two types of duplicates. The idea is to create an ID column that is unique. 
 #1 - Duplicates where row values are the same based on COLUMNS. To solve, create a unique ID column based on grouped values. REFER TO SOLUTIONS 1, 3, and 4.
 #2 - Duplicates where ALL ROWS are the exact same in the table, including the ID column. To solve, use DISTINCT. REFER TO SOLUTIONS 2.
+
+SOURCE
+https://www.youtube.com/watch?v=h48xzQR3wNQ&t=438s
 ========================================================= */
 
 -- Sample Data
