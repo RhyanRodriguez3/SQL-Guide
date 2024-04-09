@@ -34,7 +34,7 @@ UPDATE dbo.tbl1 SET [Column1] = 'Value1' WHERE [Column1] = 'Value1';    -- Step3
 
 
 /* =========================================================================
--- STEP #3: Warngling Data is when you handling column values with functions.
+-- STEP #3: Wrangling Data is when you handling column values with functions.
 =========================================================================== */
 SELECT YEAR(DateColumn) FROM tbl1 ORDER BY YEAR(DateColumn);    -- This creates a column that parses the year from the date column.
 
