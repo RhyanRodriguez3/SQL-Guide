@@ -20,7 +20,7 @@ Alex the Analyst - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/play
           LEFT/RIGHT JOINs pull rows based on the original table columns. 
           FULL OUTER JOIN pulls all table columns and rows.
           */
-        WHERE YourCondition -- Filters rows based on specified conditions. You define the conditions with operators. 
+        WHERE YourCondition -- Filters rows based on specified conditions. You define the conditions with operators. You cannot use the WHERE clause with aggregate functions.
           /*
           Operators: 
             '=', '>=' (Greater than or equal to), '<>' (Not Equal), 
@@ -29,7 +29,7 @@ Alex the Analyst - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/play
             '%' wildcard which represents zero or multiple characters, '_' represents a single character*
           */
         GROUP BY ColumnName(s) -- The GROUP BY clause groups rows that have the same values into summary rows. Often followed by a function.
-        HAVING FUNCTION(ColumnName) -- The HAVING clause replaces the WHERE clause when you need to specify a function as a condition.
+        HAVING FUNCTION(ColumnName) -- The HAVING clause filters rows based on GROUPS. Cannot use without GROUP BY clause.
         ORDER BY ColumnNameYouWantSorted ON SpecifiedCriteria -- Sort the query result.
         LIMIT;
 
