@@ -34,11 +34,10 @@ Duplicate Type #1 Solutions
 -----------------------------------------------
 DELETE FROM cars	-- Step #2: If the dataset already has unique ID, create a SELECT statement to find the ones you want to delete.
 WHERE id IN ( 
-	     SELECT model, brand, COUNT(*) AS CountOfID    -- Aggregate function used to count each row.
+	     SELECT MAX(id) AS Max_ID   -- Aggregate function used to count each row.
 	     FROM cars	
 	     GROUP BY model, brand    -- Step #1: Define the duplicate values in the columns, then group them.
 	     HAVING COUNT(*) > 1    -- This part counts all the grouped table rows.
-	     ORDER BY CountOfID
 	    ); 
 
 
@@ -72,13 +71,6 @@ WHERE id not in ( SELECT MIN(id) AS MinID    -- Step #2: This part used the MIN 
 		  ORDER BY MinID ASC
 		);
 
-
---> mySOLUTION: If the idea is to create a unique column, then .
-----------------------------------------------------------------------------
-SELECT model, brand, CONCAT(model, brand) AS Car_Info, COUNT(Car_Info)
-FROM cars
-GROUP BY model, brand
-WHERE 
 
 --> SOLUTION 5: Create a backup table, drop the original table, then rename the backup as the original. 
 -------------------------------------------------------------------------------------------------------
