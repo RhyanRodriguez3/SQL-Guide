@@ -28,7 +28,6 @@ SELECT * FROM tbl1 WHERE Column1 = 'Invalid';    -- Step1 is finding the columns
 SELECT DISTINCT Column1 FROM tbl1;    -- Step2 is getting a unique list of all values in that column.
 SELECT DISTINCT [Column1] FROM tbl1 WHERE [Column1] LIKE 'Value%';    -- This pulls a list of all similar values in that column.
 SELECT [Column1] FROM tbl1 WHERE [Column1] IN ('ValueBin1', 'ValueBin2', 'etc');    -- This finds values in that column. SELECT multiple columns to do comparisons.
-SELECT TRIM([Column1]) FROM tbl1    -- The TRIM function removes white space. 
 
 UPDATE dbo.tbl1 SET [Column1] = 'Value1' WHERE [Column1] = 'Value1';    -- Step3: Update the column and bin similar values based on column comparisons.
 
@@ -40,8 +39,12 @@ UPDATE dbo.tbl1 SET [Column1] = 'Value1' WHERE [Column1] = 'Value1';    -- Step3
 SELECT YEAR(DateColumn) FROM tbl1 ORDER BY YEAR(DateColumn);    -- This creates a column that parses the year from the date column.
 
 -- This transforms the string value to a camel case.
+    -- The LEN function counts the characters in the 
+    -- SUBSTRING starts the string.
 SELECT CONCAT(UPPER(SUBSTRING([Column1], 1, 1)), LOWER(SUBSTRING([Column1], 2, LEN(Column1)))) AS "Column Proper Case"
 
+SELECT TRIM([Column1]) FROM tbl1    -- The TRIM function removes white space. 
+    
 -- To rename a column
 sp_rename 'dbo.tble.ColumnName','ColumnRename','COLUMN'
 
