@@ -29,6 +29,19 @@ WITH cteName AS    -- TIP: CTE is not stored anywhere so it must be rerun.
 )
 SELECT * FROM cteName    -- SELECT must be used right after the CTE.
 
+
+-- Temp Table is created  Used in Stored Procedures
+DROP TABLE IF EXISTS #Temp_tableName    -- Temp Tables are created, so you will receive an error so run this.
+CREATE TABLE #Temp_tableName
+(
+    Column1, DataType    -- These are the columns structure you want to add data into.
+    Column2, DataType
+    Column3, DataType
+)
+
+INSERT INTO #temp_tableName SELECT * FROM OriginalTbl
+
+
 -- WINDOW FUNCTIONS perform aggregate operations on groups of rows, and produce results for each row.
 -- Create a windows functions useing the OVER() function. Windows functions perform aggregate operations on groups of rows. This allow users to partition based on row groups, as opposed to GROUP BY, which filters rows per column.
         SELECT ColumnName1, 
