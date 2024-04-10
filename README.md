@@ -1,6 +1,8 @@
 # **SQL Guide**
 Structured Query Language (SQL) is used to manipulate data and databases. RDBMS such as Oracle and MS SQL Server have different versions of SQL. Table of contents below. 
 
+In a data engineer role, the hardest part is data cleansing because I need the technical aptitude to tell sql what I want it to do. I want to have full control of the language to manipulate data. I want to know how to create my own syntax to solve the problems.
+
 ---
 
 ### 📶Manipulate Data with DQL
