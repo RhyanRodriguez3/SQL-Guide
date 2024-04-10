@@ -7,7 +7,11 @@ SOURCES
 Alex the Analyst - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/playlists
 Colt Steele - https://www.youtube.com/watch?v=y1KCM8vbYe4&t=310s
 */
-
+Self Join for heirechical data. To relate one event to another.
+Running totals with and without windows functions.
+Find nulls with SUM(CASE WHEN())
+Pros and Cons of Indexing. Understand system design.
+Know the difference between WHERE and HAVING.
         
 -- Subqueries are nested queries used for filtering, joining, or aggregating data within a larger query.
     SELECT TableName.ColumnName  -- Subqueries can also be used in the select clause to create calculated columns.
