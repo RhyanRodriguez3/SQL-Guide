@@ -1,6 +1,11 @@
 /*
-This is a repo of commonly asked Business Interview Q&A as well as codes for reuse.
-The SQL used is MS SQL Server.
+SUMMARY: SQL Server Data Cleansing Project. Guide on the steps to cleaning data.
+
+STEPS
+    1: Count the rows and columns.
+    2. Define columns and their values. Document unknowns.
+    3. Find null or empty values in seemingly important data (numeric (prices, amnt, etc.), string).
+    4. Then analyze data and make calculated columns.
 
 SOURCE
 https://www.youtube.com/watch?v=8rO7ztF4NtU&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f&index=3
