@@ -13,6 +13,30 @@ https://www.analystbuilder.com/courses/mysql-for-data-analytics
 https://www.youtube.com/watch?v=X6-VNKe3XVM
 */
 
+The first thing I should do is see if I can keep up with the video
+
+write the overall concepts
+Write down the steps
+Categorize the steps and concepts
+
+CLEAN DATA
+1. Import into SSMS from Excel
+> DestInation is SQL SERVER NATIVE CLIENT 11
+> Then rename the table
+
+2. Once data is imported into SSMS
+-> Get an overview of the data with a select * statement
+-> Check data types per column and update data types of the dbo.table using UPDATE, SET, and CONVERT.
+-> Find all NULLs using SELECT * FROM dbo.tbl WHERE column1 IS NULL 
+--> TIPS: Use SELF JOIN and IS NULL to replace NULL values. Then use UPDATE and SET to update the table column values.
+-> Break down long text strings into smaller units. (First Name, Last Name, Address.)
+--> TIP: Use SUBSTRING and CHARINDEX to break the first delimiter. Use LEN(Column1) to get the second half of the string.
+--> TIP: Use PARSENAME and REPLACE to find the delimiter and break it into seperate columns.
+-> Count each unique value in every column. Bin and normalzie the values in each column. (ex: 'Y' = 'Yes' = 'y')
+-> Remove Duplicates: Standard practice is to create temp tables then delete the duplicates.
+--> Use a windows function ROW_NUMBER and partition by the group of unique values as identifiers. Create a CTE to delete the duplicates.
+-> Delete unused column. TIP: USE DROP COLUMN(s)
+
 /* =================================================================================================================================
 -- STEP #1: Find nulls or other useless values in data. NULL is the absence of a value. Empty means the value has a string data type. 
 ==================================================================================================================================== */
