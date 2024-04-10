@@ -11,6 +11,7 @@ SOURCE
 https://www.youtube.com/watch?v=8rO7ztF4NtU&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f&index=3
 https://www.analystbuilder.com/courses/mysql-for-data-analytics
 https://www.youtube.com/watch?v=X6-VNKe3XVM
+https://www.youtube.com/watch?v=8rO7ztF4NtU&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f&index=3 - ALex the Analyst Data Cleansing project.
 */
 
 The first thing I should do is see if I can keep up with the video
