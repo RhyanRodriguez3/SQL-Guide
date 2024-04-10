@@ -33,28 +33,6 @@ SELECT * FROM cars ORDER BY model, brand;
 Duplicate Type #1 Solutions
 ========================= */
 
---> SOLUTION 1: Delete using Unique identifier. 
------------------------------------------------
-DELETE FROM cars	-- Step #2: If the dataset already has unique ID, create a SELECT statement to find the ones you want to delete.
-WHERE id IN ( 
-	     SELECT MAX(id) AS Max_ID   -- Aggregate function used to count each row.
-	     FROM cars	
-	     GROUP BY model, brand    -- Step #1: Define the duplicate values in the columns, then group them.
-	     HAVING COUNT(*) > 1    -- This part counts all the grouped table rows.
-	    ); 
-
-
---> SOLUTION 2: Delete using SELF JOIN, which joins the table into itself.
---------------------------------------------------------------------------
-DELETE FROM cars
-WHERE id IN ( SELECT c1.id   
-              FROM cars c1
-              JOIN cars c2    -- TIP: When JOIN not specified, defaults to INNER JOIN.
-		ON c1.model = c2.model AND c1.brand = c2.brand    -- Step #1: This part joins the table into itself using column values as IDs, then attaches the column.								     
-              WHERE c1.id > c2.id    -- Step #2: This performs the operation on each row and returns rows that result NO. NO means the grouped values return duplicates.
-	     );    
-
-
 --> SOLUTION 3: Using the ROW_NUMBER Window function.
 -----------------------------------------------------
 DELETE FROM cars
@@ -73,6 +51,56 @@ WHERE id not in ( SELECT MIN(id) AS MinID    -- Step #2: This part used the MIN 
                   GROUP BY model, brand    -- Step #1: This part filters the table based on these columns. 
 		  ORDER BY MinID ASC
 		);
+
+
+--> SOLUTION 1: Delete using Unique identifier. 
+-----------------------------------------------
+DELETE FROM cars	-- Step #2: If the dataset already has unique ID, create a SELECT statement to find the ones you want to delete.
+WHERE id IN ( 
+	     SELECT MAX(id) AS Max_ID   -- Aggregate function used to count each row.
+	     FROM cars	
+	     GROUP BY model, brand    -- Step #1: Define the duplicate values in the columns, then group them.
+	     HAVING COUNT(*) > 1    -- This part counts all the grouped table rows.
+	    ); 
+
+
+/* ========================
+Duplicate Type #2 Solutions
+========================= */
+"The previous solutions will not work in this scenario because if you try to delete the data based on the ID column, you will delete the entire row."
+
+--> SOLUTION 2: Create a temporary unique id column. This solution works in ANY RDBMS. Same concept as CTID but you use row_number instead.
+-------------------------------------------------------------------------------------------------------------------------------------------
+ALTER TABLE cars 
+	ADD row_num Int IDENTITY(1,1) NOT NULL    -- Step #1: This part creates an ID column that counts each row.
+
+DELETE FROM cars	
+WHERE row_num IN ( 
+		  SELECT MAX(row_num) AS CountOfRow_Num    -- Step #2: REFER TO SOLUTION #1 for syntax. The MAX function selects the highest values of your new ID row_num.
+		  FROM cars	
+		  GROUP BY model, brand   
+		  HAVING COUNT(*) > 1   
+		  ORDER BY CountOfRow_Num
+		 );
+
+ALTER TABLE cars 
+	DROP COLUMN row_num;
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+--> EXTRA SOLUTION: Delete using SELF JOIN, which joins the table into itself.
+--------------------------------------------------------------------------
+DELETE FROM cars
+WHERE id IN ( SELECT c1.id   
+              FROM cars c1
+              JOIN cars c2    -- TIP: When JOIN not specified, defaults to INNER JOIN.
+		ON c1.model = c2.model AND c1.brand = c2.brand    -- Step #1: This part joins the table into itself using column values as IDs, then attaches the column.								     
+              WHERE c1.id > c2.id    -- Step #2: This performs the operation on each row and returns rows that result NO. NO means the grouped values return duplicates.
+	     );    
 
 
 --> SOLUTION 5: Create a backup table, drop the original table, then rename the backup as the original. 
@@ -117,10 +145,7 @@ DROP TABLE cars_bkp;
 
 
 
-/* ========================
-Duplicate Type #2 Solutions
-========================= */
-"The previous solutions will not work in this scenario because if you try to delete the data based on the ID column, you will delete the entire row."
+
 
 
 --> SOLUTION 1: Delete using CTID. A CTID is a pseudo column that the RDBMS internally creates with every record. 
@@ -137,22 +162,7 @@ WHERE ctid IN (
 	       );
 			
 
---> SOLUTION 2: Create a temporary unique id column. This solution works in ANY RDBMS. Same concept as CTID but you use row_number instead.
--------------------------------------------------------------------------------------------------------------------------------------------
-ALTER TABLE cars 
-	ADD row_num Int IDENTITY(1,1) NOT NULL    -- Step #1: This part creates an ID column that counts each row.
 
-DELETE FROM cars	
-WHERE row_num IN ( 
-		  SELECT MAX(row_num) AS CountOfRow_Num    -- Step #2: REFER TO SOLUTION #1 for syntax. The MAX function selects the highest values of your new ID row_num.
-		  FROM cars	
-		  GROUP BY model, brand   
-		  HAVING COUNT(*) > 1   
-		  ORDER BY CountOfRow_Num
-		 );
-
-ALTER TABLE cars 
-	DROP COLUMN row_num;
 
 
 --> SOLUTION 3: Create a backup table and use distinct.
