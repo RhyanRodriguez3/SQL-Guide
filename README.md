@@ -38,6 +38,8 @@ Structured Query Language (SQL) is used to manipulate data and databases. RDBMS 
 > Joe Celko
 >
 > Conceptual SQL w/ Visualizations https://www.youtube.com/@ByteByteGo
+>
+> https://www.youtube.com/@GuyInACube/playlists What are common table expressions?
 <!--
 -->
 
