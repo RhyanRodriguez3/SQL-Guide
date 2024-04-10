@@ -8,8 +8,7 @@ STEPS
     4. Then analyze data and make calculated columns.
 
 SOURCE
-https://www.youtube.com/watch?v=8rO7ztF4NtU&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f&index=3
-https://www.analystbuilder.com/courses/mysql-for-data-analytics - 
+SUBQUERIES, WINDOWS FUNCTIONS, 
 https://www.youtube.com/watch?v=X6-VNKe3XVM - Useful SQL concepts.
 https://www.youtube.com/watch?v=8rO7ztF4NtU&list=PLUaB-1hjhk8H48Pj32z4GZgGWyylqv85f&index=3 - ALex the Analyst Data Cleansing project.
 */
