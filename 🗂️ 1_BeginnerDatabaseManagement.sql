@@ -3,14 +3,14 @@
    Understand the SQL execution order. 
    ==================================== */
 
-SELECT      --> Step #6: Then it finds the columns you input.
-FROM             --> Step #1: The engine finds which tables you are pulling from. 
-JOIN ON         --> Step #2: Then joins those tables based on the IDColumns. TIP: This has the greatest impact on query performance!
-WHERE          --> Step #3: Then it filters the table based on your conditions. Avoid having the engine look through each row, so avoid using functions or calculation here and specify values when possible so the engine can locate it in its index.
-GROUP BY      --> Step #4: Then it groups rows.
-HAVING    --> Step #5: Then it filters the grouped rows based on your condition.
-ORDER BY  --> Step #7: Consider using a smaller result set to further optimize this step. Avoid sorting large datasets.
-LIMIT     --> Step #8
+SELECT          --> Step #6: Then it finds the columns you input.
+FROM      --> Step #1: The engine finds which tables you are pulling from. 
+JOIN ON    --> Step #2: Then joins those tables based on the IDColumns. TIP: This has the greatest impact on query performance!
+WHERE       --> Step #3: Then it filters the table based on your conditions. Avoid having the engine look through each row, so avoid using functions or calculation here and specify values when possible so the engine can locate it in its index.
+GROUP BY     --> Step #4: Then it groups rows.
+HAVING        --> Step #5: Then it filters the grouped rows based on your condition.
+ORDER BY         --> Step #7: Consider using a smaller result set to further optimize this step. Avoid sorting large datasets.
+LIMIT             --> Step #8
 
 "Each SQL engine has a query optimization plan that defines how it processes queries. It contains index, memory, and algorithms. WIP"
 /*
@@ -35,7 +35,9 @@ FROM sqlite_master
 WHERE type='table'
 ORDER BY name;
 
-
+RDBMS works using hash index and B Tree Data structures.
+B tree is used to store and retrive large amount of data on disk.
+   
 <details>
   <summary><ins>SOURCES</ins></summary>
 
