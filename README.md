@@ -36,6 +36,8 @@ Structured Query Language (SQL) is used to manipulate data and databases. RDBMS 
 > BI Interview Q&A - https://www.youtube.com/c/Csharp-video-tutorialsBlogspot/playlists <br />
 >
 > Joe Celko
+>
+> Conceptual SQL w/ Visualizations https://www.youtube.com/@ByteByteGo
 <!--
 -->
 
