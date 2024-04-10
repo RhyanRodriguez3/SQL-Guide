@@ -12,7 +12,7 @@ Running totals with and without windows functions.
 Find nulls with SUM(CASE WHEN())
 Pros and Cons of Indexing. Understand system design.
 Know the difference between WHERE and HAVING.
-        
+
 -- Subqueries are nested queries used for filtering, joining, or aggregating data within a larger query.
     SELECT TableName.ColumnName  -- Subqueries can also be used in the select clause to create calculated columns.
     FROM TableName tbl1
@@ -21,6 +21,13 @@ Know the difference between WHERE and HAVING.
                         FROM TableName2 tbl2
                         WHERE ColumnName IS NOT NULL
                         )
+        
+-- Common Table Expressions (CTE)s are a named result set used to manipulate complex subqueried data. Often used as a substitute for temp tables.
+WITH cteName AS    -- TIP: CTE is not stored anywhere so it must be rerun.
+(
+ InputQuery
+)
+SELECT * FROM cteName    -- SELECT must be used right after the CTE.
 
 -- WINDOW FUNCTIONS perform aggregate operations on groups of rows, and produce results for each row.
 -- Create a windows functions useing the OVER() function. Windows functions perform aggregate operations on groups of rows. This allow users to partition based on row groups, as opposed to GROUP BY, which filters rows per column.
@@ -55,3 +62,4 @@ Know the difference between WHERE and HAVING.
             RANK() OVER(PARTITION BY ColumnName ORDER BY ColumnName DESC) AS RankColumn
         FROM TableName tbl1
         JOIN TableName tbl2 ON tbl.ID = tbl2.ID
+
