@@ -41,7 +41,9 @@ In a data engineer role, the hardest part is data cleansing because I need the t
 ### 😤📺 Youtube University! Support these channels! 
 
 > Beginner SQL w/ Joey Blue - https://www.youtube.com/@joeyblue1/playlists <br />
->
+> 
+> This guy is good for advanced query exposure, bad at teaching. - https://www.youtube.com/watch?v=h48xzQR3wNQ&t=438s <br />
+> 
 > Intermediate to Advanced SQL w/ Alex the Analyst - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/playlists <br />
 >
 > How the MS SQL Engine works w/ Brent Ozar - https://www.youtube.com/watch?v=fERXOywBhlA <br />
@@ -55,6 +57,8 @@ In a data engineer role, the hardest part is data cleansing because I need the t
 > https://www.youtube.com/@GuyInACube/playlists What are common table expressions?
 >
 > SQL, PYTHON, and CS 101 playlist - https://www.youtube.com/@Fireship/playlists
+>
+> 
 >
 > https://www.youtube.com/watch?v=dyfQoklmjAk , https://www.youtube.com/watch?v=nNR4jracHYA , https://www.youtube.com/watch?v=GAthOFYhcVg&pp=ygUUc3FsIHNlYXR0bGUgZGF0QSBndXk%3D
 <!--
