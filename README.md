@@ -24,21 +24,19 @@ Table of contents below.
 <details>
   <summary><ins>SOURCES</ins></summary>
 
-### 😤📺 Youtube University! Couldn't have made it without these teachers.
-
+### Youtube University! 😤📺 
+Couldn't have made it without these teachers.
 > Beginner SQL w/ Joey Blue - https://www.youtube.com/@joeyblue1/playlists <br />
 >
 > Conceptual SQL w/ Visualizations https://www.youtube.com/@ByteByteGo
 >
 > Intermediate to Advanced SQL w/ Alex the Analyst - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/playlists <br />
 >
-> This guy is good for advanced query exposure, bad at teaching. - https://www.youtube.com/watch?v=h48xzQR3wNQ&t=438s <br />
+> This guy is good for advanced query exposure, but bad at teaching. - https://www.youtube.com/watch?v=h48xzQR3wNQ&t=438s <br />
 >
 > How the MS SQL Engine works w/ Brent Ozar & Joe Celko - https://www.youtube.com/watch?v=fERXOywBhlA <br /> 
 >
 > BI Interview Q&A - https://www.youtube.com/c/Csharp-video-tutorialsBlogspot/playlists <br />
->
->  
 >
 > SQL, PYTHON, and CS 101 playlist - https://www.youtube.com/@Fireship/playlists
 >
