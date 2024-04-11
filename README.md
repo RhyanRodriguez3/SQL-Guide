@@ -18,7 +18,7 @@ Table of contents below.
 >
 > Learn one step at a time. Be comfortable with problem solving. Be aware of the overwhelming problem. Be aware of the frustration and pressure of "doing it right," and document each step along the way.
 >
-> 
+> Beginner level is basics, fundamentals, and defining the smallest units. Intermediate is the application of basics and fundamentals. Advanced is having a track record of solving problems. 
 <br />
 
 <details>
