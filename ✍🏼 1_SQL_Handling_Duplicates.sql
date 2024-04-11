@@ -1,17 +1,18 @@
 /* ====================================================== 
 Guide on how to handle duplicates in a data set with SQL.
 
-There are two types of duplicates. The idea is to create an ID column that is unique. 
-#1 - Duplicates where row values are the same based on COLUMNS. To solve, create a unique ID column based on grouped values. REFER TO SOLUTIONS 1, 3, and 4.
-#2 - Duplicates where ALL ROWS are the exact same in the table, including the ID column. To solve, use DISTINCT. REFER TO SOLUTIONS 2.
-
-SOURCE
-https://www.youtube.com/watch?v=h48xzQR3wNQ&t=438s
+SOURCE: https://www.youtube.com/watch?v=h48xzQR3wNQ&t=438s
 ========================================================= */
 
--- Sample Data
-drop table if exists cars;
-create table cars
+"The problem is duplicates. There are two types of duplicates. The solution is to create a new ID column that is unique"
+
+-- Duplicate #1 - Columns have the same row values. REFER TO SOLUTIONS 1, 3, and 4.
+-- Duplicate #2 - ALL ROWS are the same in the table. REFER TO SOLUTION 2.
+
+
+-- Here is the sample data
+DROP TABLE IF EXISTS cars;
+CREATE TABLE cars
 (
     id      int,
     model   varchar(50),
@@ -19,12 +20,12 @@ create table cars
     color   varchar(30),
     make    int
 );
-insert into cars values (1, 'Model S', 'Tesla', 'Blue', 2018);
-insert into cars values (2, 'EQS', 'Mercedes-Benz', 'Black', 2022);
-insert into cars values (3, 'iX', 'BMW', 'Red', 2022);
-insert into cars values (4, 'Ioniq 5', 'Hyundai', 'White', 2021);
-insert into cars values (5, 'Model S', 'Tesla', 'Silver', 2018); -- Rerun these queries to insert deleted rows back into table.
-insert into cars values (6, 'Ioniq 5', 'Hyundai', 'Green', 2021); -- Rerun these queries to insert deleted rows back into table.
+INSERT INTO cars VALUES (1, 'Model S', 'Tesla', 'Blue', 2018);
+INSERT INTO cars VALUES (2, 'EQS', 'Mercedes-Benz', 'Black', 2022);
+INSERT INTO cars VALUES (3, 'iX', 'BMW', 'Red', 2022);
+INSERT INTO cars VALUES (4, 'Ioniq 5', 'Hyundai', 'White', 2021);
+INSERT INTO cars VALUES (5, 'Model S', 'Tesla', 'Silver', 2018);   -- Rerun these queries to insert deleted rows back into table.
+INSERT INTO cars VALUES (6, 'Ioniq 5', 'Hyundai', 'Green', 2021);  -- Rerun these queries to insert deleted rows back into table.
 
 
 SELECT * FROM cars ORDER BY model, brand;
@@ -33,78 +34,60 @@ SELECT * FROM cars ORDER BY model, brand;
 Duplicate Type #1 Solutions
 ========================= */
 
---> SOLUTION 3: Using the ROW_NUMBER Window function.
------------------------------------------------------
-DELETE FROM cars
-WHERE id IN ( SELECT id
-              FROM (SELECT *
-                   , ROW_NUMBER() OVER(PARTITION BY model, brand ORDER BY id) AS NewID_ModelBrand    -- Step #1: Use a window function to number each row then order based on partitioned columns. 
-                   FROM cars) x
-              WHERE x.NewID_ModelBrand > 1); -- Step #2: The new column 'RowNum' has now become the ID column, so any value greater than 1 should be the duplicates. 
+--> SOLUTION 1: IF THE TABLE HAS AN ID COLUMN, create a new ID column dependent on the ID column. 
+-------------------------------------------------------------------------------------------------------------
+DELETE FROM cars	-- Step #4: If the dataset already has unique ID, create a SELECT statement to find the ones you want to delete.
+WHERE id IN ( 
+	     SELECT MAX(id) AS Max_ID   -- Step #3: MAX agg function picks the largest values that have counts > 1.
+	     FROM cars	
+	     GROUP BY model, brand    -- Step #1: Define the duplicate values in the columns, then group them. The table collapses into summary rows with those values.
+	     HAVING COUNT(*) > 1    -- Step #2: This counts all the grouped rows in a new column.
+	    ); 
 
 
---> SOLUTION 4: Using MIN function. This deletes MULTIPLE duplicate records.
-----------------------------------------------------------------------------
+--> SOLUTION 2: IF the duplicates have a unique ID column, use the MIN aggregate function.
+------------------------------------------------------------------------------------------
 DELETE FROM cars
-WHERE id not in ( SELECT MIN(id) AS MinID    -- Step #2: This part used the MIN function to create a column that returns the smallest ID column values.
+WHERE id NOT IN ( SELECT MIN(id) AS MinID    -- Step #2: The MIN aggregate function counts the smallest unique values from the ID column to create a new ID column.
                   FROM cars
-                  GROUP BY model, brand    -- Step #1: This part filters the table based on these columns. 
+                  GROUP BY model, brand    -- Step #1: This part groups values from column(s). 
 		  ORDER BY MinID ASC
 		);
-
-
---> SOLUTION 1: Delete using Unique identifier. 
------------------------------------------------
-DELETE FROM cars	-- Step #2: If the dataset already has unique ID, create a SELECT statement to find the ones you want to delete.
-WHERE id IN ( 
-	     SELECT MAX(id) AS Max_ID   -- Aggregate function used to count each row.
-	     FROM cars	
-	     GROUP BY model, brand    -- Step #1: Define the duplicate values in the columns, then group them.
-	     HAVING COUNT(*) > 1    -- This part counts all the grouped table rows.
-	    ); 
 
 
 /* ========================
 Duplicate Type #2 Solutions
 ========================= */
-"The previous solutions will not work in this scenario because if you try to delete the data based on the ID column, you will delete the entire row."
+"The previous solutions only work IF the table already has an ID column. The functions wont work with exact duplicates because the ID columns are the same."
 
-	
--- How to handle duplicate rows using CTE.
-WITH TableCTE AS
+--> SOLUTION 1: Create a new ID column using the ROW_NUMBER window function.
+----------------------------------------------------------------------------
+DELETE FROM cars
+WHERE id IN ( SELECT id
+              FROM (SELECT *
+                   , ROW_NUMBER() OVER(PARTITION BY model, brand ORDER BY id) AS NewID_ModelBrand    -- Step #1: ROW_NUMBER() numbers each row based on the partitioned columns. 
+                   FROM cars) x
+              WHERE x.NewID_ModelBrand > 1); -- Step #2: The new column 'RowNum' has now become the ID column, so any value greater than 1 are duplicates. 
+
+
+-- BEST SOLUTION: Create a temp CTE and remove the duplicates from it.
+WITH CTE1 AS
     (
     SELECT *
-	,  ROW_NUMBER() OVER(PARTITION BY ID ORDER BY ID) AS RowNumber
+	,  ROW_NUMBER() OVER(PARTITION BY ID ORDER BY ID) AS NewID_ModelBrand
     FROM Employees
     )
-DELETE FROM TableCTE WHERE RowNumber > 1 	
+DELETE FROM CTE1 WHERE NewID_ModelBrand > 1 	
 
 	
---> SOLUTION 2: Create a temporary unique id column. This solution works in ANY RDBMS. Same concept as CTID but you use row_number instead.
--------------------------------------------------------------------------------------------------------------------------------------------
-ALTER TABLE cars 
-	ADD row_num Int IDENTITY(1,1) NOT NULL    -- Step #1: This part creates an ID column that counts each row.
-
-DELETE FROM cars	
-WHERE row_num IN ( 
-		  SELECT MAX(row_num) AS CountOfRow_Num    -- Step #2: REFER TO SOLUTION #1 for syntax. The MAX function selects the highest values of your new ID row_num.
-		  FROM cars	
-		  GROUP BY model, brand   
-		  HAVING COUNT(*) > 1   
-		  ORDER BY CountOfRow_Num
-		 );
-
-ALTER TABLE cars 
-	DROP COLUMN row_num;
-
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/* EXTRA Solution (For the interviewer) */
 
 
-
---> EXTRA SOLUTION: Delete using SELF JOIN, which joins the table into itself.
---------------------------------------------------------------------------
+--> eSOLUTION #1: Delete using SELF JOIN, which joins the table into itself.
+----------------------------------------------------------------------------
 DELETE FROM cars
 WHERE id IN ( SELECT c1.id   
               FROM cars c1
@@ -153,27 +136,6 @@ INSERT INTO cars
 SELECT * FROM cars_bkp;    -- This part allows you to insert all values from the backup table into the original table.
 
 DROP TABLE cars_bkp;
-
-
-
-
-
-
---> SOLUTION 1: Delete using CTID. A CTID is a pseudo column that the RDBMS internally creates with every record. 
------------------------------------------------------------------------------------------------------------------
-SELECT * FROM cars ORDER BY id;
-
-DELETE FROM cars	
-WHERE ctid IN ( 
-		SELECT MAX(ctid) AS CountOfCTID    -- SSMS does not have CTID. CTID only works in Postgres SQL! Oracle calls it RowID.
-		FROM cars	
-		GROUP BY model, brand   
-		HAVING COUNT(*) > 1    
-		ORDER BY CountOfCTID
-	       );
-			
-
-
 
 
 --> SOLUTION 3: Create a backup table and use distinct.
