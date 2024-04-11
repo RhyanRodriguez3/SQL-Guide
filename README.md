@@ -1,5 +1,13 @@
 # **SQL Guide**
-Structured Query Language (SQL) is used to manipulate data and databases. RDBMS such as Oracle and MS SQL Server have different versions of SQL. Table of contents below. 
+SQL is a programming language used to manipulate data and databases. RDBMS such as Oracle and MS SQL Server have different versions of SQL. 
+<br />
+
+Relational databases organize data into tables. Tables have columns and rows. Columns establish attributes (data types) and rows are records (data points). Primary tables have a primary key which connects to the foreign key from fact tables. Primary keys establish one to many relationships.
+<br />
+
+The language is broken down from statement, clauses, then key words. 
+
+Table of contents below. 
 
 In a data engineer role, the hardest part is data cleansing because I need the technical aptitude to tell sql what I want it to do. I want to have full control of the language to manipulate data. I want to know how to create my own syntax to solve the problems.
 
@@ -42,6 +50,8 @@ In a data engineer role, the hardest part is data cleansing because I need the t
 > Conceptual SQL w/ Visualizations https://www.youtube.com/@ByteByteGo
 >
 > https://www.youtube.com/@GuyInACube/playlists What are common table expressions?
+>
+> SQL, PYTHON, and CS 101 playlist - https://www.youtube.com/@Fireship/playlists
 <!--
 -->
 
