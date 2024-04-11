@@ -8,7 +8,10 @@ Joey Blue - https://www.youtube.com/@joeyblue1/playlists
 Alex the Analyst - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/playlists
 */
 
-
+step1 FROM 
+step2 GROUP BY 
+step3 HAVING
+step4 WHERE
 -- This is the basic statement structure to retreive data from the db.
         SELECT ColumnNames(s) AS RenameColumn(s)
         FROM TableName
