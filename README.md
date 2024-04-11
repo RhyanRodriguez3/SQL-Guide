@@ -17,6 +17,9 @@ Table of contents below.
 > These files contain personal projects and reusable code.  
 >
 > Learn one step at a time. Be comfortable with problem solving. Be aware of the overwhelming problem. Be aware of the frustration and pressure of "doing it right," and document each step along the way.
+>
+> 
+<br />
 
 <details>
   <summary><ins>SOURCES</ins></summary>
