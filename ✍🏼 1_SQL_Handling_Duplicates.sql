@@ -4,13 +4,13 @@ Guide on how to handle duplicates in a data set with SQL.
 SOURCE: https://www.youtube.com/watch?v=h48xzQR3wNQ&t=438s
 ========================================================= */
 
-"The problem is duplicates. There are two types of duplicates. The solution is to create a new ID column that is unique"
+"The problem is that there are two types of duplicates. The solution is to create a new ID column that is unique"
 
--- Duplicate #1 - Columns have the same row values. REFER TO SOLUTIONS 1, 3, and 4.
--- Duplicate #2 - ALL ROWS are the same in the table. REFER TO SOLUTION 2.
+-- Duplicate #1 - Columns have the same row values. REFER TO SOLUTIONS 1, 2, and 3.
+-- Duplicate #2 - ALL ROWS are the same in the table. Use DISTINCT and REFER TO SOLUTION 2.
 
 
--- Here is the sample data
+-- Here is the sample data.
 DROP TABLE IF EXISTS cars;
 CREATE TABLE cars
 (
@@ -30,12 +30,9 @@ INSERT INTO cars VALUES (6, 'Ioniq 5', 'Hyundai', 'Green', 2021);  -- Rerun thes
 
 SELECT * FROM cars ORDER BY model, brand;
 
-/* ========================
-Duplicate Type #1 Solutions
-========================= */
-
---> SOLUTION 1: IF THE TABLE HAS AN ID COLUMN, create a new ID column dependent on the ID column. 
--------------------------------------------------------------------------------------------------------------
+/* ===========================================================================================================
+Duplicate Type #1 SOLUTION 1: IF THE TABLE HAS AN ID COLUMN, create a new ID column dependent on the ID column. 
+============================================================================================================ */
 DELETE FROM cars	-- Step #4: If the dataset already has unique ID, create a SELECT statement to find the ones you want to delete.
 WHERE id IN ( 
 	     SELECT MAX(id) AS Max_ID   -- Step #3: MAX agg function picks the largest values that have counts > 1.
@@ -55,13 +52,12 @@ WHERE id NOT IN ( SELECT MIN(id) AS MinID    -- Step #2: The MIN aggregate funct
 		);
 
 
-/* ========================
-Duplicate Type #2 Solutions
-========================= */
-"The previous solutions only work IF the table already has an ID column. The functions wont work with exact duplicates because the ID columns are the same."
+"The previous solutions only work IF the table already has an ID column. They wont work when every row is the same."
 
---> SOLUTION 1: Create a new ID column using the ROW_NUMBER window function.
-----------------------------------------------------------------------------
+
+/* =======================================================================================
+Duplicate Type #2 SOLUTION 1: Create a new ID column using the ROW_NUMBER window function.
+======================================================================================= */
 DELETE FROM cars
 WHERE id IN ( SELECT id
               FROM (SELECT *
@@ -74,7 +70,7 @@ WHERE id IN ( SELECT id
 WITH CTE1 AS
     (
     SELECT *
-	,  ROW_NUMBER() OVER(PARTITION BY ID ORDER BY ID) AS NewID_ModelBrand
+	,  ROW_NUMBER() OVER(PARTITION BY model, brand) AS NewID_ModelBrand
     FROM Employees
     )
 DELETE FROM CTE1 WHERE NewID_ModelBrand > 1 	
