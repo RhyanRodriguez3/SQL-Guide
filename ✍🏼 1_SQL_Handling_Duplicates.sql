@@ -1,8 +1,6 @@
-/* ====================================================== 
-Guide on how to handle duplicates in a data set with SQL.
-
-SOURCE: https://www.youtube.com/watch?v=h48xzQR3wNQ&t=438s
-========================================================= */
+/* ===================================================
+Guide on how to handle duplicates in a table with SQL.
+=====================================================*/
 
 "The problem is that there are two types of duplicates. The solution is to create a new ID column that is unique"
 
