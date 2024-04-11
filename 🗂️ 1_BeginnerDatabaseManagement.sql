@@ -13,6 +13,12 @@ ORDER BY         --> Step #7: Consider using a smaller result set to further opt
 LIMIT             --> Step #8
 
 "Each SQL engine has a query optimization plan that defines how it processes queries. It contains index, memory, and algorithms. WIP"
+
+/* 
+Relational databases organize data into tables. Tables have columns and rows. Columns establish attributes (data types) and rows are records (data points). 
+Primary tables have a primary key that connect to foreign key(s) from fact tables. Primary keys establish one to many relationships.
+*/
+
 /*
 There are many RDBMS, but this is how the DB engine works.
 a.	BONUS Database Mgmt: 
