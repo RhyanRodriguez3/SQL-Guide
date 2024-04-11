@@ -38,9 +38,9 @@ Duplicate Type #1 Solutions
 DELETE FROM cars
 WHERE id IN ( SELECT id
               FROM (SELECT *
-                   , ROW_NUMBER() OVER(PARTITION BY model, brand ORDER BY id) AS RowNum    -- Step #1: Use a window function to number each row then order based on partitioned columns. 
+                   , ROW_NUMBER() OVER(PARTITION BY model, brand ORDER BY id) AS NewID_ModelBrand    -- Step #1: Use a window function to number each row then order based on partitioned columns. 
                    FROM cars) x
-              WHERE x.RowNum > 1); -- Step #2: The new column 'RowNum' has now become the ID column, so any value greater than 1 should be the duplicates. 
+              WHERE x.NewID_ModelBrand > 1); -- Step #2: The new column 'RowNum' has now become the ID column, so any value greater than 1 should be the duplicates. 
 
 
 --> SOLUTION 4: Using MIN function. This deletes MULTIPLE duplicate records.
