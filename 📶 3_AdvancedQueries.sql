@@ -27,6 +27,12 @@ DELIMITER;
 
 
 
+
+    
+1. TIP
+- TIP: Use CTE rather than subqueries. 
+- Sorting is a costly activity. Don't premature sort in a query.
+- TIP: Don't repeat yourself
         
 
 https://www.youtube.com/watch?v=UC7uvOqcUTs&list=PLUaB-1hjhk8GjfgvWlreA6BvTvazz8RHG
