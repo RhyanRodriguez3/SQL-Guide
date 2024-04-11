@@ -68,4 +68,14 @@ Alex the Analyst - https://www.youtube.com/channel/UC7cs8q-gJRlGwj4A8OmCmXg/play
           END AS NameCreatedColumn
         FROM ColumnName;
 
+-- Constraints are NOT NULL, UNIQUE, DEFAULT '', AUTO_INCREMENT for primary keys. Constraints are specified after you create the table and establish the column data types.
+CREATE TABLE tble1
+(
+        IDColumn INT AUTO_INCREMENT
+        , PRIMARY KEY(IDColumn)
+        , Column1 VARCHAR(30) NOT NULL
+        , Column2 FLOAT UNIQUE
+        , Column3 TEXT DEFAULT 'YourValue'
+)
 
+-- To find patterns in text string use wild cards % and _.
