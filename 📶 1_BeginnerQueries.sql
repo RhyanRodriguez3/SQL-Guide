@@ -79,3 +79,19 @@ CREATE TABLE tble1
 )
 
 -- To find patterns in text string use wild cards % and _.
+
+Databases are a collection of data in the form of tables.
+
+The language can be broken down into key words, clauses, to statement. 
+
+A statement is a combo of key words, table names, and column names.
+SELECT Column1
+FROM Table1;    -- ";" is the RDBMS delimiter to end a statement.
+
+Aggregate functions are AVG and the funciton in the select clause. Aggregates work on the group, instead of the whole query;
+GROUP BY Column1 is run first. It groups rows.
+
+WHERE statements happen before the group by.
+HAVING occurs after the gorup by 
+
+SQL in 60min - https://www.youtube.com/watch?v=p3qvj9hO_Bo
