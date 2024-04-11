@@ -9,13 +9,15 @@ The language is broken down from statement, clauses, and key words.
 
 Table of contents below. 
 
-In a data engineer role, the hardest part is data cleansing because I need the technical aptitude to tell sql what I want it to do. I want to have full control of the language to manipulate data. I want to know how to create my own syntax to solve problems. 
-Currently, <br />
 
-- I feel comfortable with reading the language and vaguely understand what's happening on the back end.
-- I feel comfortable with data cleansing. These came from YT tutorials exposure.
+I am increasing my technical skills and documenting. Currently, <br />
+
+- I feel comfortable reading the language and vaguely understand what's happening on the back end.
+- I feel comfortable with data cleansing from YT tutorials exposure.
+
 - I'm not used to translating problems to SQL queries. What can help me with that? 
-- If I got my own dataset, it would help me craft data that execs might want to see. I think that's the best I can do at this point. The goal is to get up and walking, then when I'm at the environment I can get to running. So I have to get used to problems. WHAT I HAVE TO GET USED TO RN is attempting to solve problems with vague ass direcitons. I can do this through YT tutorials.
+- I understand that data is used to paint a broader picture of the entire problem and I know how to present them to execs. The data storytelling is my main passion and strength.
+- The goal is to get up and walking, then when I'm in the environment I can get to running. So I have to get used to problems. WHAT I HAVE TO GET USED TO RN is attempting to solve problems with vague ass direcitons. I can do this through YT tutorials. I should find YT tutorials which go over questions you'd ask in real life of the data and then I know how to 
 
 ---
 
@@ -55,11 +57,11 @@ Currently, <br />
 >
 > BI Interview Q&A - https://www.youtube.com/c/Csharp-video-tutorialsBlogspot/playlists <br />
 >
-> https://www.youtube.com/@GuyInACube/playlists What are common table expressions?
+>  
 >
 > SQL, PYTHON, and CS 101 playlist - https://www.youtube.com/@Fireship/playlists
 >
-> https://www.youtube.com/watch?v=dyfQoklmjAk , https://www.youtube.com/watch?v=nNR4jracHYA , https://www.youtube.com/watch?v=GAthOFYhcVg&pp=ygUUc3FsIHNlYXR0bGUgZGF0QSBndXk%3D
+> 
 <!--
 To make this guide better look up these YT channels
 BASICS
