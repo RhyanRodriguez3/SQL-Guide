@@ -69,6 +69,17 @@ Duplicate Type #2 Solutions
 ========================= */
 "The previous solutions will not work in this scenario because if you try to delete the data based on the ID column, you will delete the entire row."
 
+	
+-- How to handle duplicate rows using CTE.
+WITH TableCTE AS
+    (
+    SELECT *
+	,  ROW_NUMBER() OVER(PARTITION BY ID ORDER BY ID) AS RowNumber
+    FROM Employees
+    )
+DELETE FROM TableCTE WHERE RowNumber > 1 	
+
+	
 --> SOLUTION 2: Create a temporary unique id column. This solution works in ANY RDBMS. Same concept as CTID but you use row_number instead.
 -------------------------------------------------------------------------------------------------------------------------------------------
 ALTER TABLE cars 
