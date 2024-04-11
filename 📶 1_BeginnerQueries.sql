@@ -1,12 +1,11 @@
-/*
-This is a SQL guide for beginner level queries. 
-We will be going over statement structure (the syntax and major clauses) and basic functions for data manipulation.
-Beginner SQL means being able to import, structure, and clean data.
+/* ---------------------------------------------------------------------------------------------------------------
+Beginner SQL is understanding the basics and fundamentals.
+==================================================================================================================
+RDBMS such as Oracle and MS SQL Server have different versions of the language but it was standardized by ANSI. 
+Understand the language concepts and you can apply them to any RDBMS.
 
-Beginner is basic knowledge. Intermediate is applicable knowledge. Advanced is just problem solving. 
-
-RDBMS such as Oracle and MS SQL Server have different versions of the language but it was standardized by ANSI. Understand the language concepts and you can apply them to any RDBMS.
-*/
+The language is broken down into three major parts. Statement, clauses, and key words.
+================================================================================================================== */
 
 step1 FROM 
 step2 GROUP BY 
