@@ -13,6 +13,16 @@ Find nulls with SUM(CASE WHEN())
 Pros and Cons of Indexing. Understand system design.
 Know the difference between WHERE and HAVING.
 
+
+-- Nested Queries are select statement results which are used in another select statement. One query informs the other query.
+SELECT b.Column1, b.Column2
+FROM tbl2 b 
+WHERE b.IDColumn IN
+(
+    SELECT a.IDColumn FROM tbl1 a WHERE YourCondition    -- Step #1: SQL runs the inner query first, then the outer.
+)
+
+    
 -- Subqueries are nested queries used for filtering, joining, or aggregating data within a larger query.
     SELECT TableName.ColumnName  -- Subqueries can also be used in the select clause to create calculated columns.
     FROM TableName tbl1
