@@ -6,15 +6,15 @@ Table of contents below.
 ---
 
 ### 📶Manipulate Data with DQL
-> Each file contain queries from beginner to advanced.
+- Each file contain queries from beginner to advanced.
 
 
 ### 🗂️Manipulate the database with DDL, DML, DCL, and TCL
-> These files explain how the database engine works and RDBMS tools and techniques.
+- These files explain how the database engine works and RDBMS tools and techniques.
 
 
 ### ✍🏼PRACTICE🗦🐐🏀
-> These files contain personal projects and reusable code.  
+- These files contain personal projects and reusable code.  
 >
 > Learn one step at a time. Be comfortable with problem solving. Be aware of the overwhelming problem. Be aware of the frustration and pressure of "doing it right," and document each step along the way.
 >
