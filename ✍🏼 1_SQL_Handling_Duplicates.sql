@@ -1,5 +1,12 @@
 /* ===================================================
 Guide on how to handle duplicates in a table with SQL.
+
+Beginner questions I was asked at my first Junior BI Engineer Role.
+
+Table 1 could possibly have duplicates Write a query to read unique records from Table 1.
+Display average GPA by college and academic year
+Display the top 3 students within each college
+Write a python query to read csv and pandas. 
 =====================================================*/
 
 "The problem is that there are two types of duplicates. The solution is to create a new ID column that is unique"
