@@ -42,6 +42,7 @@ Couldn't have made it without these teachers.
 >
 > 
 <!--
+Look up this GitHub to take inspiration on how I would format readme guides - https://github.com/AmmarAbdelhalem/FSM/blob/main/SQL_MAN/1-DataTypesandDataDefinition.md
 To make this guide better look up these YT channels
 BASICS
 https://www.youtube.com/watch?v=p3qvj9hO_Bo
