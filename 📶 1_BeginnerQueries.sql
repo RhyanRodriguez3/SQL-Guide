@@ -94,6 +94,6 @@ Aggregate functions are AVG and the funciton in the select clause. Aggregates wo
 GROUP BY Column1 is run first. It groups rows.
 
 WHERE statements happen before the group by.
-HAVING occurs after the gorup by 
+HAVING occurs after the gorup by -- Use Having when your filtering with aggregates, use WHERE when not.
 
 SQL in 60min - https://www.youtube.com/watch?v=p3qvj9hO_Bo
